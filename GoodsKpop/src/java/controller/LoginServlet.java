@@ -76,10 +76,10 @@ public class LoginServlet extends HttpServlet {
         //if accountFound = null = >username orr password incorrect
         if (accountFound == null) {
             request.setAttribute("error", "Username or password incorrect");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+            request.getRequestDispatcher("view/login.jsp").forward(request, response);
             //else username and password corrrect
         } else {
-            request.getRequestDispatcher("hello.jsp").forward(request, response);
+            request.getRequestDispatcher("view/hello.jsp").forward(request, response);
 
         }
 

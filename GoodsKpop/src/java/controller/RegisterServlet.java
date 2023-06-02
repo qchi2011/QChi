@@ -43,15 +43,15 @@ public class RegisterServlet extends HttpServlet {
             boolean isSuccessRegister = logic.createAccount(username, password);
             if (isSuccessRegister) {
                 //redirect home servlet
-                response.sendRedirect("home");
+                response.sendRedirect("login");
             } else {
                 request.setAttribute("error", "Username or password is incorrect");
-                request.getRequestDispatcher("register.jsp").forward(request, response);
+                request.getRequestDispatcher("view/login.jsp").forward(request, response);
             }
 
         } catch (IllegalArgumentException e) {
             request.setAttribute("error", e.getMessage());
-            request.getRequestDispatcher("register.jsp").forward(request, response);
+            request.getRequestDispatcher("view/login.jsp").forward(request, response);
 
         } catch (Exception e) {
             request.setAttribute("error", "detected error!");
