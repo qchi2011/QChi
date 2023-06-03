@@ -36,19 +36,7 @@
 <body>
 
     <!-- Header Section -->
-        <nav class="headerNav_section">
-            <a href="/" class="logo"><span>QC</span>Select</a>
-            <div class="feature_wrapper">
-                <input type="checkbox" hidden id="en_search">
-                <form action="" method="POST">
-                    <input type="text" placeholder="Looking for?">
-                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </form>
-                <label for="en_search" class="fa-solid fa-magnifying-glass"></label>
-                <i class="fa-solid fa-cart-shopping"></i>
-                <i class="fa-sharp fa-solid fa-user"></i>
-            </div>
-        </nav>
+    <jsp:include page="../../common/header.jsp"></jsp:include>
 
     <!-- Banner Section -->
         <div class="banner_section">
@@ -125,6 +113,9 @@
                 </div>
 
         </main>
+    <!-- footer -->
+    <jsp:include page="../../common/footer.jsp"></jsp:include>
+
     
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
