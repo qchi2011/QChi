@@ -8,7 +8,7 @@ import com.goodskpopstore.entity.Product;
 import com.goodskpopstore.mapper.IGenericMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import mapper.IGenericMapper;
+
 
 /**
  *

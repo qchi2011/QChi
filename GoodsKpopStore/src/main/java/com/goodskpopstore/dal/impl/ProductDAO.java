@@ -8,8 +8,6 @@ import com.goodskpopstore.dal.DBContext;
 import com.goodskpopstore.dal.IGenericDAO;
 import com.goodskpopstore.entity.Product;
 import com.goodskpopstore.mapper.impl.ProductMapper;
-import dal.DBContext;
-import static java.util.Collections.list;
 import java.util.List;
 
 /**
