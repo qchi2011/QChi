@@ -82,10 +82,10 @@
                         <img src="/images/earphone.png" alt="category image">
                         <span>TECH</span>
                     </a>
-                    <a href="/" class="category_item">
+<!--                    <a href="/" class="category_item">
                         <img src="/images/cheering.png" alt="category image">
                         <span>CHEERING</span>
-                    </a>
+                    </a>-->
                     <div class="category_item">
                         <img src="/images/music.png" alt="category image">
                         <span>MUSIC</span>
@@ -98,18 +98,18 @@
                         <img src="/images/magazine.png" alt="category image">
                         <span>MAGAZINES</span>
                     </a>
-                    <a href="/" class="category_item">
+<!--                    <a href="/" class="category_item">
                         <img src="/images/acc.png" alt="category image">
                         <span>ACCESSORY</span>
-                    </a>
-                    <a href="/" class="category_item">
+                    </a>-->
+<!--                    <a href="/" class="category_item">
                         <img src="/images/notebook.png" alt="category image">
                         <span>STATIONERY</span>
                     </a>
                     <a href="/" class="category_item">
                         <img src="/images/etc.png" alt="category image">
                         <span>ETC</span>
-                    </a>
+                    </a>-->
                 </div>
 
         </main>
