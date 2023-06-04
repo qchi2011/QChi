@@ -101,10 +101,7 @@ a:hover {
     background-color: #181823;
 }
 
-main {
-    font-family: "Raleway", sans-serif;
-}
-main .category_section {
+.category_section {
     width: 90vw;
     display: flex;
     padding: 1rem;
@@ -113,8 +110,9 @@ main .category_section {
     position: relative;
     border-radius: 1rem;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    font-family: "Raleway", sans-serif;
 }
-main .category_section h2 {
+.category_section h2 {
     left: 1.5rem;
     top: -1.5rem;
     padding: 0 1rem;
@@ -122,9 +120,9 @@ main .category_section h2 {
     background-color: white;
     font-family: 'Anuphan', sans-serif;
 }
-main .category_section .category_item {
+.category_section .category_item {
     width: 25%;
-    padding: 2rem;
+    padding: 0.5rem;
     display: flex;
     cursor: pointer;
     font-size: 1.2vw;
@@ -132,11 +130,11 @@ main .category_section .category_item {
     align-items: center;
     justify-content: center;
 }
-main .category_section .category_item img {
+.category_section .category_item img {
     width: 45px;
     margin-right: 1rem;
 }
-main .category_section .category_item:hover {
+.category_section .category_item:hover {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 section {

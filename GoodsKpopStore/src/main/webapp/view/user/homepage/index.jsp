@@ -17,6 +17,12 @@
         <!-- Tab -->
         <title>QC SELECT | QC'S PICK!</title>
 
+        <!--bootstrap-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <script src="https://kit.fontawesome.com/65d7426ab6.js" crossorigin="anonymous"></script>
+
         <!-- CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
               integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -80,39 +86,17 @@
                     </a>
                 </div>
             </div>
-
-            <!-- Main Section -->
-            <main>
-
-                <!-- Category Section -->
-                <div class="category_section">
-                    <h2>CATEGORY</h2>
-                    <a href="/" class="category_item">
-                        <img src="/images/tech.jpg" alt="category image">
-                        <span>TECH</span>
-                    </a>
-                    <div class="category_item">
-                        <img src="/images/muu.jpg" alt="category image">
-                        <span>MUSIC</span>
-                    </div>
-                    <a href="/" class="category_item">
-                        <img src="/images/fashion.jpg" alt="category image">
-                        <span>FASHION</span>
-                    </a>
-                    <a href="/" class="category_item">
-                        <img src="/images/mg.jpg" alt="category image">
-                        <span>MAGAZINES</span>
-                    </a>
-                </div>
-            </div>
-
-        </main>
-        <!-- footer -->
-    <jsp:include page="../../common/footer.jsp"></jsp:include>
+       
+            <!-- Category -->
+        <jsp:include page="../../common/category.jsp" ></jsp:include>    
+            <!-- Product -->
+        <jsp:include page="../../common/product.jsp" ></jsp:include>    
+            <!-- Footer -->
+        <jsp:include page="../../common/footer.jsp"></jsp:include>
 
 
-</body>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </html>

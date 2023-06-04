@@ -5,6 +5,7 @@
 package com.goodskpopstore.biz.impl;
 
 import com.goodskpopstore.biz.IGenericLogic;
+import com.goodskpopstore.dal.impl.ProductDAO;
 import com.goodskpopstore.entity.Product;
 import java.util.List;
 
@@ -13,10 +14,15 @@ import java.util.List;
  * @author Admin
  */
 public class ProductLogic implements IGenericLogic<Product> {
-
+    ProductDAO dao;
+    
+    public ProductLogic(){
+        dao = new ProductDAO();
+    }
     @Override
     public List<Product> findAll() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+       List<Product> list = dao.findAll();
+       return list;
     }
 
    

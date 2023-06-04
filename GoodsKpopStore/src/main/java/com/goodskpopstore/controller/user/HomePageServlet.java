@@ -4,12 +4,14 @@
  */
 package com.goodskpopstore.controller.user;
 
+import com.goodskpopstore.biz.impl.ProductLogic;
+import com.goodskpopstore.entity.Product;
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /**
  *
@@ -22,6 +24,13 @@ public class HomePageServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        ProductLogic productLogic = new ProductLogic();
+        
+        //find all product in dtb
+        List<Product> listProduct = productLogic.findAll();
+        //set atttibute
+        request.setAttribute("listProduct",listProduct);
+        //redirect to homepage
         request.getRequestDispatcher("view/user/homepage/index.jsp").forward(request, response);
     }
 
