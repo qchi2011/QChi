@@ -3,7 +3,7 @@
     Created on : Jun 3, 2023, 1:48:52 PM
     Author     : Admin
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,22 +58,22 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="/images/banner_1.jpg" alt="First banner">
+                            <img src="${pageContext.request.contextPath}/images/banner_1.jpg" alt="First banner">
                         </div>
                         <div class="carousel-item">
-                            <img src="/images/banner_2.jpg" alt="Second banner">
+                            <img src="${pageContext.request.contextPath}/images/banner_2.jpg" alt="Second banner">
                         </div>
                         <div class="carousel-item">
-                            <img src="/images/banner_3.jpg" alt="Third banner">
+                            <img src="${pageContext.request.contextPath}/images/banner_3.jpg" alt="Third banner">
                         </div>
                         <div class="carousel-item">
-                            <img src="/images/banner_4.jpg" alt="Fourth banner">
+                            <img src="${pageContext.request.contextPath}/images/banner_4.jpg" alt="Fourth banner">
                         </div>
                         <div class="carousel-item">
-                            <img src="/images/banner_5.png" alt="5th banner">
+                            <img src="${pageContext.request.contextPath}/images/banner_5.png" alt="5th banner">
                         </div> 
                         <div class="carousel-item">
-                            <img src="/images/banner_6.jpg" alt="6th banner">
+                            <img src="${pageContext.request.contextPath}/images/banner_6.jpg" alt="6th banner">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#banner_carousel" role="button" data-slide="prev">

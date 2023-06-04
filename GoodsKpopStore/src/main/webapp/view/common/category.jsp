@@ -17,19 +17,19 @@
             <div class="category_section">
                 <h2>CATEGORY</h2>
                 <a href="/" class="category_item">
-                    <img src="/images/tech.jpg" alt="category image">
+                    <img src="${pageContext.request.contextPath}/images/tech.jpg" alt="category image">
                     <span>TECH</span>
                 </a>
                 <div class="category_item">
-                    <img src="/images/muu.jpg" alt="category image">
+                    <img src="${pageContext.request.contextPath}/images/muu.jpg" alt="category image">
                     <span>MUSIC</span>
                 </div>
                 <a href="/" class="category_item">
-                    <img src="/images/fashion.jpg" alt="category image">
+                    <img src="${pageContext.request.contextPath}/images/fashion.jpg" alt="category image">
                     <span>FASHION</span>
                 </a>
                 <a href="/" class="category_item">
-                    <img src="/images/mg.jpg" alt="category image">
+                    <img src="${pageContext.request.contextPath}/images/mg.jpg" alt="category image">
                     <span>MAGAZINES</span>
                 </a>
             </div>
