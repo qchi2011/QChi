@@ -64,20 +64,20 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        //logic
-        AccountLogic logic = new AccountLogic();
-        //find account by username or password
-        Account accountFound = logic.findByUsernamePassword(username, password);
+//        //logic
+//        AccountLogic logic = new AccountLogic();
+//        //find account by username or password
+//        Account accountFound = logic.findByUsernamePassword(username, password);
 
         //if accountFound = null = >username orr password incorrect
-        if (accountFound == null) {
-            request.setAttribute("error", "Username or password incorrect");
-            request.getRequestDispatcher("view/login.jsp").forward(request, response);
-            //else username and password corrrect
-        } else {
-            request.getRequestDispatcher("view/hello.jsp").forward(request, response);
-
-        }
+//        if (accountFound == null) {
+//            request.setAttribute("error", "Username or password incorrect");
+//            request.getRequestDispatcher("view/login.jsp").forward(request, response);
+//            //else username and password corrrect
+//        } else {
+//            request.getRequestDispatcher("view/hello.jsp").forward(request, response);
+//
+//        }
 
     }
 

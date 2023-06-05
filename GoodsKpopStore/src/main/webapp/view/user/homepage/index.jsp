@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
               integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
               crossorigin="anonymous">
-        <link rel="stylesheet" href="../../../css/web.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/web.css">
 
 
         <!-- Icon -->
@@ -87,13 +87,15 @@
             </div>
         </div>
 
-        <div class ="content" style="margin: 0px;">
-            <!-- Category -->
-            <jsp:include page="../../common/category.jsp" ></jsp:include>    
+        <!-- Category -->
+        <jsp:include page="../../common/category.jsp" ></jsp:include>    
             <!-- Product -->
-            <jsp:include page="../../common/product.jsp" ></jsp:include>                 
+            <section id="content" class="row">
+        <jsp:include page="../../common/category2.jsp" ></jsp:include>    
+        <jsp:include page="../../common/product.jsp" ></jsp:include>  
+        </section
             <!-- Footer -->
-            <jsp:include page="../../common/footer.jsp"></jsp:include>
+        <jsp:include page="../../common/footer.jsp"></jsp:include>
 
 
     </body>

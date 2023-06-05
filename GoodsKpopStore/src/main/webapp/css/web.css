@@ -65,7 +65,7 @@ a:hover {
     transition: opacity 1s;
     background-color: transparent;
 }
-.headerNav_section .feature_wrapper form button i:hover {
+.headerNav_section .feature_wrapper form button a:hover {
     color: var(--secondColor);
 }
 .headerNav_section .feature_wrapper #en_search:checked ~ form input {

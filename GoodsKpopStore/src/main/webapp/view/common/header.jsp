@@ -22,7 +22,7 @@
                     <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
                 <label for="en_search" class="fa-solid fa-magnifying-glass"></label>
-                <i class="fa-solid fa-cart-shopping"></i>
+                <a class="fa-solid fa-cart-shopping" href="" ></a>
                 <a class="fa-sharp fa-solid fa-user" href="view/common/login.jsp"></a>
                     
                 </i>
