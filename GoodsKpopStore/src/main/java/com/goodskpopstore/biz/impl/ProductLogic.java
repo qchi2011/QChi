@@ -22,7 +22,6 @@ public class ProductLogic implements IGenericLogic<Product> {
     @Override
     public List<Product> findAll() {
        List<Product> list = dao.findAll();
-        System.out.println("ProductLogic");
        return list;
     }
 

@@ -23,7 +23,9 @@
                 </form>
                 <label for="en_search" class="fa-solid fa-magnifying-glass"></label>
                 <i class="fa-solid fa-cart-shopping"></i>
-                <i class="fa-sharp fa-solid fa-user"></i>
+                <a class="fa-sharp fa-solid fa-user" href="view/common/login.jsp"></a>
+                    
+                </i>
             </div>
         </nav>
     </body>

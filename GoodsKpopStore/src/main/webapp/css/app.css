@@ -40,7 +40,7 @@ a:hover {
 .headerNav_section .feature_wrapper i, .headerNav_section .feature_wrapper label {
     cursor: pointer;
 }
-.headerNav_section .feature_wrapper i:hover, .headerNav_section .feature_wrapper label:hover {
+.headerNav_section .feature_wrapper a:hover, .headerNav_section .feature_wrapper label:hover {
     color: var(--primaryColor);
 }
 .headerNav_section .feature_wrapper form {
@@ -283,5 +283,4 @@ a:hover {
     margin-right: 3px;
     margin-bottom: 5px;
 }
-
 

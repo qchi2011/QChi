@@ -90,12 +90,10 @@
         <div class ="content" style="margin: 0px;">
             <!-- Category -->
             <jsp:include page="../../common/category.jsp" ></jsp:include>    
-                <!-- Product -->
-            <jsp:include page="../../common/product.jsp" ></jsp:include>    
-        </div>                
-
+            <!-- Product -->
+            <jsp:include page="../../common/product.jsp" ></jsp:include>                 
             <!-- Footer -->
-        <jsp:include page="../../common/footer.jsp"></jsp:include>
+            <jsp:include page="../../common/footer.jsp"></jsp:include>
 
 
     </body>

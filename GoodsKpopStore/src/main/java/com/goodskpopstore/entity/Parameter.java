@@ -1,8 +1,5 @@
-/*				
- * Copyright (C) FPT University , Ltd. 2023	
- * 07/02/2023 FPT VinhPK2 DEBIT_BOOK_ITER1
- */	
-package com.debitbook.model;
+	
+package com.goodskpopstore.entity;
 
 
 public class Parameter {

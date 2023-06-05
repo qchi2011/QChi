@@ -30,7 +30,6 @@ public class HomePageServlet extends HttpServlet {
         List<Product> listProduct = productLogic.findAll();
         //set atttibute
         request.setAttribute("listProduct",listProduct);
-        System.out.println("HomePageServlet");
         //redirect to homepage
         request.getRequestDispatcher("view/user/homepage/index.jsp").forward(request, response);
     }

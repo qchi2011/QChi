@@ -4,7 +4,7 @@
  */
 package com.goodskpopstore.dal;
 
-import com.debitbook.model.Parameter;
+import com.goodskpopstore.entity.Parameter;
 import com.goodskpopstore.mapper.IGenericMapper;
 import java.math.BigDecimal;
 import java.sql.*;
@@ -62,7 +62,6 @@ public class DBContext<T> {
             while (resultSet.next()) {
                 list.add(rowMapper.mapRow(resultSet));
             }
-            System.out.println("DBContext");
             return list;
         } catch (SQLException e) {
             System.out.println("PHAM KHAC VINH: Loi o ham query");
@@ -188,22 +187,6 @@ public class DBContext<T> {
         return id;
     }
     
-//    public int insert2(String tableName, HashMap<String, String> values) {
-//        Set<String> keys = values.keySet();
-//        Parameter params[] = new Parameter[keys.size()];
-//        String sql = "insert into [" + tableName + "](";
-//        String paramQuery = "";
-//        int count=0;
-//        for (String key : keys) {
-//            sql += "[" + key + "],";
-//            paramQuery += "?,";
-//            params[count++] = new Parameter;
-//        }
-//        paramQuery = paramQuery.substring(0, paramQuery.length() - 2);
-//        sql = sql.substring(0, sql.length() - 2) + ") values ("+paramQuery+")";
-//        return insert(sql, params);
-//    }
-
     /**
      * mapping parameter to their types
      *
