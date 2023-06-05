@@ -46,7 +46,6 @@
                         <button type="submit">Sign In</button>
                         <a href="">Forgot your password?</a>
                         <div class="social_container">
-                            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
                             <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
                         </div>
                     </form>
