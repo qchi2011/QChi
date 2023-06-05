@@ -13,7 +13,8 @@
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/app.css">
     </head>
     <body>
-            <!-- Category Section -->
+        <!-- Category Section -->
+            
             <div class="category_section">
                 <h2>CATEGORY</h2>
                 <a href="/" class="category_item">
@@ -33,7 +34,7 @@
                     <span>MAGAZINES</span>
                 </a>
             </div>
-        </div>
+            
 
 </body>
 </html>

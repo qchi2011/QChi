@@ -20,6 +20,7 @@ public class ProductDAO extends DBContext<Product> implements IGenericDAO<Produc
     public List<Product> findAll() {
         String sql = "select * from Product";
         List<Product> list = query(sql, new ProductMapper());
+        System.out.println("ProductDAO");
         return list;
         
     }

@@ -59,38 +59,41 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img src="${pageContext.request.contextPath}/images/banner_1.jpg" alt="First banner">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="${pageContext.request.contextPath}/images/banner_2.jpg" alt="Second banner">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="${pageContext.request.contextPath}/images/banner_3.jpg" alt="Third banner">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="${pageContext.request.contextPath}/images/banner_4.jpg" alt="Fourth banner">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="${pageContext.request.contextPath}/images/banner_5.png" alt="5th banner">
-                        </div> 
-                        <div class="carousel-item">
-                            <img src="${pageContext.request.contextPath}/images/banner_6.jpg" alt="6th banner">
-                        </div>
                     </div>
-                    <a class="carousel-control-prev" href="#banner_carousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#banner_carousel" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+                    <div class="carousel-item">
+                        <img src="${pageContext.request.contextPath}/images/banner_2.jpg" alt="Second banner">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="${pageContext.request.contextPath}/images/banner_3.jpg" alt="Third banner">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="${pageContext.request.contextPath}/images/banner_4.jpg" alt="Fourth banner">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="${pageContext.request.contextPath}/images/banner_5.png" alt="5th banner">
+                    </div> 
+                    <div class="carousel-item">
+                        <img src="${pageContext.request.contextPath}/images/banner_6.jpg" alt="6th banner">
+                    </div>
                 </div>
+                <a class="carousel-control-prev" href="#banner_carousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#banner_carousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
-       
+        </div>
+
+        <div class ="content" style="margin: 0px;">
             <!-- Category -->
-        <jsp:include page="../../common/category.jsp" ></jsp:include>    
-            <!-- Product -->
-        <jsp:include page="../../common/product.jsp" ></jsp:include>    
+            <jsp:include page="../../common/category.jsp" ></jsp:include>    
+                <!-- Product -->
+            <jsp:include page="../../common/product.jsp" ></jsp:include>    
+        </div>                
+
             <!-- Footer -->
         <jsp:include page="../../common/footer.jsp"></jsp:include>
 

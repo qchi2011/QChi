@@ -28,6 +28,7 @@ public class ProductMapper implements IGenericMapper<Product> {
             int categoryId = resultSet.getInt("categoryId");
             
             Product product = new Product(id, name, description, price, quantity, image, categoryId);
+            System.out.println("ProductMapper");
             return product;
         } catch(SQLException e){
             System.out.println("Wrong at ProductMapper: "+ e.getMessage());

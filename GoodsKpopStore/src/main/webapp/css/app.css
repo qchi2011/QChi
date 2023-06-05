@@ -137,7 +137,9 @@ a:hover {
 .category_section .category_item:hover {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-section {
+
+/*bi loi hien ra block mau den o product.jsp*/
+/*section {
     width: 100%;
     display: inline-block;
     background: #333;
@@ -146,7 +148,8 @@ section {
     font-size: 22px;
     font-weight: 700;
     text-decoration: underline;
-}
+}*/
+
 
 .footer-distributed{
     background: #666;

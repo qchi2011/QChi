@@ -12,11 +12,12 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <section class="product col-md-10">
+
+         <div class="product col-md-10">
             <!-- row -->
             <div class="row">
                 <c:forEach items="${listProduct}" var="product">
-                    <div class="col-lg-4 mb-md-5 ">
+                    <div class="col-lg-4 mb-md-5 " style="float:left">
                         <div class="card h-100">
                             <img src="${product.image}" alt="..." class="card-img-top">
                             <div class="card-body">
@@ -36,6 +37,7 @@
                     </div>
                 </c:forEach>
             </div>
-        </section>
+        </div>
+        
     </body>
 </html>

@@ -62,6 +62,7 @@ public class DBContext<T> {
             while (resultSet.next()) {
                 list.add(rowMapper.mapRow(resultSet));
             }
+            System.out.println("DBContext");
             return list;
         } catch (SQLException e) {
             System.out.println("PHAM KHAC VINH: Loi o ham query");
