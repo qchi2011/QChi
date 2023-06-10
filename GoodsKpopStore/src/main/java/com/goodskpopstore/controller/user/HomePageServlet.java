@@ -5,7 +5,9 @@
 package com.goodskpopstore.controller.user;
 
 import com.goodskpopstore.biz.impl.ProductLogic;
+import com.goodskpopstore.entity.PageControl;
 import com.goodskpopstore.entity.Product;
+import constant.CommonConst;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -19,17 +21,30 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class HomePageServlet extends HttpServlet {
 
-
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         ProductLogic productLogic = new ProductLogic();
+
+        //get total product in dtb
+        int totalRecord = productLogic.findTotalRecord();
+
+        //get total page
+        int totalPage = productLogic.findTotalPage(totalRecord);
+
+        //get current page
+        int page = productLogic.findCurrentPage(request);
+
+        //get list product by currentpage
+        List<Product> listByCurrentPage = productLogic.findProductByPage(page);
         
-        //find all product in dtb
-        List<Product> listProduct = productLogic.findAll();
+        //create instance
+        PageControl pageControl = new PageControl(CommonConst.PRODUCT_RECORD_PER_PAGE, totalPage, totalRecord, page);
+
         //set atttibute
-        request.setAttribute("listProduct",listProduct);
+        request.setAttribute("listProduct",listByCurrentPage);
+        request.setAttribute("pageControl", pageControl);
+
         //redirect to homepage
         request.getRequestDispatcher("view/user/homepage/index.jsp").forward(request, response);
     }
@@ -37,10 +52,7 @@ public class HomePageServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-   
+
     }
-
-
-  
 
 }

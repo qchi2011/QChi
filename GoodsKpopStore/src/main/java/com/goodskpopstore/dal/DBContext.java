@@ -13,9 +13,8 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 public class DBContext<T> {
-    
+
     protected Connection connection;
     protected PreparedStatement statement;
 
@@ -57,7 +56,7 @@ public class DBContext<T> {
 
             // set parameter
             setParameter(parameter);
-            
+
             resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 list.add(rowMapper.mapRow(resultSet));
@@ -65,11 +64,11 @@ public class DBContext<T> {
             return list;
         } catch (SQLException e) {
             System.out.println("PHAM KHAC VINH: Loi o ham query");
-            
+
             throw new RuntimeException(e);
         } catch (ClassNotFoundException ex) {
             System.out.println("PHAM KHAC VINH: Loi o ham query");
-            
+
             Logger.getLogger(DBContext.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
@@ -131,7 +130,7 @@ public class DBContext<T> {
                 throw new RuntimeException(e);
             }
         }
-        
+
     }
 
     /**
@@ -153,7 +152,7 @@ public class DBContext<T> {
             connection.setAutoCommit(false);
             statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             setParameter(parameter);
-            
+
             statement.executeUpdate();
             resultSet = statement.getGeneratedKeys();
             if (resultSet.next()) {
@@ -182,11 +181,45 @@ public class DBContext<T> {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-            
+
         }
         return id;
     }
     
+    public int findTotalRecord(String sql) {
+        ResultSet resultSet = null;
+        try {
+            connection = getConnection();
+            statement = connection.prepareStatement(sql);
+            resultSet = statement.executeQuery();
+            
+            if (resultSet.next()){
+                int total = resultSet.getInt(1);
+                return total;
+            }
+        } catch (ClassNotFoundException ex) {
+            ex.printStackTrace();
+        } catch (SQLException ex) {
+            Logger.getLogger(DBContext.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+                if (statement != null) {
+                    statement.close();
+                }
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("PHAM KHAC VINH: Loi o ham query");
+                throw new RuntimeException(e);
+            }
+        }
+        return 0;
+    }
+
     /**
      * mapping parameter to their types
      *
@@ -209,7 +242,7 @@ public class DBContext<T> {
                     statement.setTimestamp(index, (Timestamp) object.getValue());
                 } else if (object.getValue() instanceof Boolean) {
                     statement.setBoolean(index, (Boolean) object.getValue());
-                }else if (object.getValue() instanceof BigDecimal) {
+                } else if (object.getValue() instanceof BigDecimal) {
                     statement.setBigDecimal(index, (BigDecimal) object.getValue());
                 }
             }

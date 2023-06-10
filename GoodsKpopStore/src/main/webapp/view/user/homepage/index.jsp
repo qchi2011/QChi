@@ -88,14 +88,16 @@
         </div>
 
         <!-- Category -->
-        <jsp:include page="../../common/category.jsp" ></jsp:include>    
-            <!-- Product -->
-            <section id="content" class="row">
-        <jsp:include page="../../common/category2.jsp" ></jsp:include>    
-        <jsp:include page="../../common/product.jsp" ></jsp:include>  
-        </section
-            <!-- Footer -->
-        <jsp:include page="../../common/footer.jsp"></jsp:include>
+            <jsp:include page="../../common/category.jsp" ></jsp:include>    
+        <!-- Product -->
+        <div id="content" class="row">
+            <jsp:include page="../../common/category2.jsp" ></jsp:include>    
+            <jsp:include page="../../common/product.jsp" ></jsp:include>  
+        </div>
+        <!--Pagination-->
+            <jsp:include page="../../common/pagination.jsp"></jsp:include>
+        <!-- Footer -->
+            <jsp:include page="../../common/footer.jsp"></jsp:include>
 
 
     </body>

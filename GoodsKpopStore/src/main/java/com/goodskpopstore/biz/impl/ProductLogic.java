@@ -7,7 +7,9 @@ package com.goodskpopstore.biz.impl;
 import com.goodskpopstore.biz.IGenericLogic;
 import com.goodskpopstore.dal.impl.ProductDAO;
 import com.goodskpopstore.entity.Product;
+import constant.CommonConst;
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  *
@@ -25,6 +27,39 @@ public class ProductLogic implements IGenericLogic<Product> {
        return list;
     }
 
-   
-    
+    public int findCurrentPage(HttpServletRequest request) {
+        int currentPage;
+        if(request.getParameter("page") == null){
+            currentPage = 1;
+        }else{
+            try{
+                currentPage = Integer.parseInt(request.getParameter("page"));
+            }catch (NumberFormatException e){ 
+                currentPage = 1;
+            }
+        } return currentPage;
+    }
+
+    public int findTotalRecord() {
+        int totalRecord = dao.findTotalRecord();
+        return 0;
+    }
+
+    public int findTotalPage(int totalRecord) {
+        int result = totalRecord % CommonConst.PRODUCT_RECORD_PER_PAGE;
+        if (result % 2 != 0 ){
+            return result++;
+        }else{
+            return result;
+        }
+            
+    }
+
+
+    public List<Product> findProductByPage(int page) {
+        List<Product> listByCurrentPage = dao.findProductByPage(page);
+        return listByCurrentPage;
+    }
+
+ 
 }

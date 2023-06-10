@@ -17,14 +17,14 @@
             <!-- row -->
             <div class="row">
                 <c:forEach items="${listProduct}" var="product">
-                    <div class="col-lg-4 mb-md-5 " style="float:left">
+                    <div class="col-lg-3 mb-md-4 ">
                         <div class="card h-100">
                             <img src="${product.image}" alt="..." class="card-img-top">
                             <div class="card-body">
                                 <div class="text-center">
                                     <h5 class="card-title">${product.name}</h5>
 <!--                                    $40.00 - $80.00-->
-                                    ${product.price}
+                                    ${product.price}$
                                 </div>
                             </div>
 

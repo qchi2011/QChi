@@ -12,12 +12,12 @@
         <title>JSP Page</title>
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/web.css">
     </head>
-    <section class="category col-md-2">
-        <ul class="list-group">
-            <li class="list-group-item">Tech</li>
-            <li class="list-group-item">Music</li>
-            <li class="list-group-item">Fashion</li>
-            <li class="list-group-item">Magazines</li>
-        </ul>
-    </section>
+    <div class="category col-md-2">
+        <div class="list-group">
+            <a href="/" class="list-group-item">Tech</a>
+            <a href="/" class="list-group-item">Music</a>
+            <a href="/" class="list-group-item">Fashion</a>
+            <a href="/" class="list-group-item">Magazines</a>
+        </div>
+    </div>
 </html>
