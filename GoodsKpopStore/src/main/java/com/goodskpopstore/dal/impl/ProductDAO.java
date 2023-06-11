@@ -39,26 +39,50 @@ public class ProductDAO extends DBContext<Product> implements IGenericDAO<Produc
 
     public static void main(String[] args) {
         ProductDAO dao = new ProductDAO();
-       System.out.println(dao.findTotalRecord());
-//        for (Product product : dao.findProductByPage(2)) {
+//        System.out.println(dao.findTotalRecord());
+//        for (Product product : dao.findProductByKeyword("blackpink")) {
 //            System.out.println(product);
-//        }
     }
 
-    public int findTotalRecord() {
-        String sql = "select count(*) from Product";
-        return findTotalRecord(sql);
+    public int findTotalRecord(String keyword) {
+        String sql = "select count(*) from Product\n"
+                + "where name like ?";
+        return findTotalRecord(sql, new Parameter("%" + keyword + "%", Types.NVARCHAR));
     }
 
-    public List<Product> findProductByPage(int page) {
+    public List<Product> findProductByPage(int page, String keyword) {
         String sql = "select * from Product\n"
+                + "where name like ?\n"
                 + "order by id\n"
                 + "offset ?\n"
                 + "rows fetch next ?\n"
                 + "rows only";
         List<Product> listByCurrentPage = query(sql, new ProductMapper(),
+                new Parameter("%" + keyword + "%", Types.NVARCHAR),
                 new Parameter((page - 1) * CommonConst.PRODUCT_RECORD_PER_PAGE, Types.INTEGER),
                 new Parameter(CommonConst.PRODUCT_RECORD_PER_PAGE, Types.INTEGER));
         return listByCurrentPage;
     }
+
+    public int findTotalRecordByCateId(int categoryId) {
+        String sql = "select count(*) from Product\n"
+                + "where categoryId = ?";
+        return findTotalRecord(sql, new Parameter(categoryId, Types.INTEGER));
+
+    }
+
+    public List<Product> findProductByCategory(int page, int categoryId) {
+        String sql = "select * from Product\n"
+                + "where categoryId = ?\n"
+                + "ordrxer by id\n"
+                + "offset ?\n"
+                + "rows fetch next ?\n"
+                + "rows only";
+        List<Product> listByCurrentPage = query(sql, new ProductMapper(),
+                new Parameter(categoryId, Types.INTEGER),
+                new Parameter((page - 1) * CommonConst.PRODUCT_RECORD_PER_PAGE, Types.INTEGER),
+                new Parameter(CommonConst.PRODUCT_RECORD_PER_PAGE, Types.INTEGER));
+        return listByCurrentPage;
+    }
+
 }

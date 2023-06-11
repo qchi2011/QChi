@@ -9,5 +9,5 @@ package constant;
  * @author Admin
  */
 public class CommonConst {
-    public static final int PRODUCT_RECORD_PER_PAGE = 12;
+    public static final int PRODUCT_RECORD_PER_PAGE = 8;
 }

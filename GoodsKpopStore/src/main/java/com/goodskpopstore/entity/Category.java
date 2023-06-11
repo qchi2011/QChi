@@ -23,10 +23,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @Getter
 @Setter
-public class PageControl {
-    private String urlPattern;
-    private int recordPerPage;
-    private int totalPage;
-    private int totalRecord;
-    private int page;
+public class Category {
+    private int id;
+    private String name;
 }

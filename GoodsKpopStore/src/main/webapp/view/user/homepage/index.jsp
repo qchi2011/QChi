@@ -88,16 +88,45 @@
         </div>
 
         <!-- Category -->
-            <jsp:include page="../../common/category.jsp" ></jsp:include>    
-        <!-- Product -->
-        <div id="content" class="row">
-            <jsp:include page="../../common/category2.jsp" ></jsp:include>    
-            <jsp:include page="../../common/product.jsp" ></jsp:include>  
+        <jsp:include page="../../common/category.jsp" ></jsp:include> 
+            <!-- Hot Section -->
+            <div class="hot_section">
+                <h2>WHAT'S HOT</h2>
+                <div class="hot_list_wrapper">
+                    <a href="/detail.html" class="hot_list_item">
+                        <img src="${pageContext.request.contextPath}/images/hot_1.jpg" alt="hot_image"/>  
+                    <span>Lisa's story behind the scenes</span><br/>
+                    <span>Special Photobook from LISA🎁</span>
+
+                </a>
+                <a href="/detail.html" class="hot_list_item">
+                    <img src="${pageContext.request.contextPath}/images/hot_2.jpg" alt="hot_image"/>   
+                    <span>Size that fits in one hand</span><br/>
+                    <span>A kit album that can be listened to anytime, anywhere<span/>
+
+                </a>
+                <a href="/detail.html" class="hot_list_item">
+                    <img src="${pageContext.request.contextPath}/images/hot_3.jpg" alt="hot_image"/> 
+                    <span> 👕that will look good on anyone and everyone</span><br/>
+                    <span>Check out these modern yet classic vibes</span> 
+                </a>
+                <a href="/detail.html" class="hot_list_item">
+                    <img src="${pageContext.request.contextPath}/images/hot_4.jpg" alt="hot_image"/> 
+                    <span>Jisoo's first solo album</span><br/>
+                    <span>An album full of beautiful images</span> 
+                </a>
+            </div>
         </div>
-        <!--Pagination-->
-            <jsp:include page="../../common/pagination.jsp"></jsp:include>
-        <!-- Footer -->
-            <jsp:include page="../../common/footer.jsp"></jsp:include>
+        <!-- Product -->
+        <!--<div id="content" class="row">-->
+            <%--<jsp:include page="../../common/category2.jsp" ></jsp:include>--%> 
+            <h2 style="text-align: center;">LET'S PICK</h2>
+            <jsp:include page="../../common/product.jsp" ></jsp:include>  
+            </div>
+            <!--Pagination-->
+        <jsp:include page="../../common/pagination.jsp"></jsp:include>
+            <!-- Footer -->
+        <jsp:include page="../../common/footer.jsp"></jsp:include>
 
 
     </body>

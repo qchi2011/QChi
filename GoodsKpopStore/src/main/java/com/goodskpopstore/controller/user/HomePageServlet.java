@@ -4,7 +4,9 @@
  */
 package com.goodskpopstore.controller.user;
 
+import com.goodskpopstore.biz.impl.CategoryLogic;
 import com.goodskpopstore.biz.impl.ProductLogic;
+import com.goodskpopstore.entity.Category;
 import com.goodskpopstore.entity.PageControl;
 import com.goodskpopstore.entity.Product;
 import constant.CommonConst;
@@ -14,6 +16,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -25,9 +28,11 @@ public class HomePageServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         ProductLogic productLogic = new ProductLogic();
-
+        CategoryLogic categoryLogic = new CategoryLogic();
+        //get sesion
+        HttpSession session = request.getSession();
         //get total product in dtb
-        int totalRecord = productLogic.findTotalRecord();
+        int totalRecord = productLogic.findTotalRecord("");
 
         //get total page
         int totalPage = productLogic.findTotalPage(totalRecord);
@@ -36,13 +41,16 @@ public class HomePageServlet extends HttpServlet {
         int page = productLogic.findCurrentPage(request);
 
         //get list product by currentpage
-        List<Product> listByCurrentPage = productLogic.findProductByPage(page);
-        
+        List<Product> listByCurrentPage = productLogic.findProductByPage(page, "");
+
+        //get list category
+        List<Category> listCategories = categoryLogic.findAll();
         //create instance
-        PageControl pageControl = new PageControl(CommonConst.PRODUCT_RECORD_PER_PAGE, totalPage, totalRecord, page);
+        PageControl pageControl = new PageControl("home?",CommonConst.PRODUCT_RECORD_PER_PAGE, totalPage, totalRecord, page);
 
         //set atttibute
-        request.setAttribute("listProduct",listByCurrentPage);
+        session.setAttribute("listProduct", listByCurrentPage);
+        session.setAttribute("listCategories", listCategories);
         request.setAttribute("pageControl", pageControl);
 
         //redirect to homepage

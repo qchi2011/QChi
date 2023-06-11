@@ -3,7 +3,7 @@
     Created on : Jun 3, 2023, 3:21:18 PM
     Author     : Admin
 --%>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,8 +17,8 @@
             <a href="/" class="logo"><span>QC</span>Select</a>
             <div class="feature_wrapper">
                 <input type="checkbox" hidden id="en_search">
-                <form action="" method="POST">
-                    <input type="text" placeholder="Looking for?">
+                <form action="search" method="get">
+                    <input type="search" placeholder="Looking for?" name="keyword">
                     <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
                 <label for="en_search" class="fa-solid fa-magnifying-glass"></label>

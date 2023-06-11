@@ -13,11 +13,11 @@
     </head>
     <body>
 
-         <div class="product col-md-10">
+         <div class="product col-md-12">
             <!-- row -->
             <div class="row">
                 <c:forEach items="${listProduct}" var="product">
-                    <div class="col-lg-3 mb-md-4 ">
+                    <div class="col-lg-3 mb-md-4 "style="justify-content: center;">
                         <div class="card h-100">
                             <img src="${product.image}" alt="..." class="card-img-top">
                             <div class="card-body">

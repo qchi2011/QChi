@@ -9,7 +9,9 @@ import com.goodskpopstore.mapper.IGenericMapper;
 import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -185,15 +187,17 @@ public class DBContext<T> {
         }
         return id;
     }
-    
-    public int findTotalRecord(String sql) {
+
+    public int findTotalRecord(String sql, Parameter... parameters) {
         ResultSet resultSet = null;
         try {
             connection = getConnection();
             statement = connection.prepareStatement(sql);
+            setParameter(parameters);
+
             resultSet = statement.executeQuery();
-            
-            if (resultSet.next()){
+
+            if (resultSet.next()) {
                 int total = resultSet.getInt(1);
                 return total;
             }
