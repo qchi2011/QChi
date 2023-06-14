@@ -89,7 +89,7 @@
 
         <!-- Category -->
         <jsp:include page="../../common/category.jsp" ></jsp:include> 
-            <!-- Hot Section -->
+        <!-- Hot Section -->
             <div class="hot_section">
                 <h2>WHAT'S HOT</h2>
                 <div class="hot_list_wrapper">
@@ -119,14 +119,14 @@
         </div>
         <!-- Product -->
         <!--<div id="content" class="row">-->
-            <%--<jsp:include page="../../common/category2.jsp" ></jsp:include>--%> 
+            <%--<jsp:include page="../../common/category2.jsp" ></jsp:include>--%>
             <h2 style="text-align: center;">LET'S PICK</h2>
             <jsp:include page="../../common/product.jsp" ></jsp:include>  
             </div>
             <!--Pagination-->
-        <jsp:include page="../../common/pagination.jsp"></jsp:include>
+            <jsp:include page="../../common/pagination.jsp"></jsp:include>
             <!-- Footer -->
-        <jsp:include page="../../common/footer.jsp"></jsp:include>
+            <jsp:include page="../../common/footer.jsp"></jsp:include>
 
 
     </body>

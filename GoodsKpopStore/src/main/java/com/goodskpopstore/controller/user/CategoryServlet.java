@@ -64,7 +64,6 @@ public class CategoryServlet extends HttpServlet {
             throws ServletException, IOException {
         CategoryLogic logic = new CategoryLogic();
         ProductLogic productLogic = new ProductLogic();
-
         //get session
         HttpSession session = request.getSession();
         try {

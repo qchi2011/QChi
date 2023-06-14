@@ -8,7 +8,6 @@ import com.goodskpopstore.biz.IGenericLogic;
 import com.goodskpopstore.dal.impl.ProductDAO;
 import com.goodskpopstore.entity.Product;
 import constant.CommonConst;
-import java.awt.print.Book;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
@@ -64,14 +63,6 @@ public class ProductLogic implements IGenericLogic<Product> {
         return listByCurrentPage;
     }
 
-//    public List<Product> findProductByKeyword(String keyword) {
-//        List<Product> listSearch = dao.findProductByKeyword(keyword);
-//        return listSearch; 
-//    }
-//    public int findProductByKeyword(String keyword) {
-//        int totalRecord = dao.findTotalRecord();
-//        return totalRecord;
-//    }
     public int findTotalRecordByCateId(int categoryId) {
         int totalRecord = dao.findTotalRecordByCateId(categoryId);
         return totalRecord;

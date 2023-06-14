@@ -74,7 +74,7 @@ public class ProductDAO extends DBContext<Product> implements IGenericDAO<Produc
     public List<Product> findProductByCategory(int page, int categoryId) {
         String sql = "select * from Product\n"
                 + "where categoryId = ?\n"
-                + "ordrxer by id\n"
+                + "order by id\n"
                 + "offset ?\n"
                 + "rows fetch next ?\n"
                 + "rows only";

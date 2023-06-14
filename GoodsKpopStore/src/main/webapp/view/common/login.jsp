@@ -30,7 +30,10 @@
 
         <main class="auth_temp">
             <div id="auth_wrapper">
-                <h3><span>QC</span>Select</h3>
+                <a href="home">
+                   <h3><span>QC</span>Select</h3> 
+                </a>
+                
                 <div class="form_container sign_in_form">
                     <form action="login" method="POST">
                         <h1>Sign In</h1>

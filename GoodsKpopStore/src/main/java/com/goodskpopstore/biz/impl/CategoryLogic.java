@@ -30,11 +30,9 @@ public class CategoryLogic implements IGenericLogic<Category>{
     public int findCategory(HttpServletRequest request) {
         //get category
         String categoryId_Raw = request.getParameter("id");
-        
         //parse
         try {
             int categoryId = Integer.parseInt(categoryId_Raw);
-            
             //check categoryId out range from 1 - 4 
             if (categoryId > dao.findAll().size() || categoryId < 1) {
                 throw new IllegalArgumentException();

@@ -24,6 +24,7 @@
                 <li class="page-item"><a class="page-link" href="${pageControl.urlPattern}page=${pageControl.page + 1}">${pageControl.page + 1}</a></li>
                 <li class="page-item"><a class="page-link" href="${pageControl.urlPattern}page=${pageControl.page + 2}">${pageControl.page + 2}</a></li>
                 <li class="page-item"><a class="page-link" href="${pageControl.urlPattern}page=${pageControl.page + 3}">${pageControl.page + 3}</a></li>
+                
                 <li class="page-item"><a class="page-link" href="${pageControl.urlPattern}page=${pageControl.page + 1}">Next</a></li>
             </ul>
         </div>

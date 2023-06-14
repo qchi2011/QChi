@@ -104,7 +104,7 @@ a:hover {
 .category_section {
     width: 90vw;
     display: flex;
-    padding: 1rem;
+    padding: 2rem;
     flex-wrap: wrap;
     margin: 2rem 5vw;
     position: relative;
