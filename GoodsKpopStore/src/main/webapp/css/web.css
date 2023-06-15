@@ -314,4 +314,88 @@ a:hover {
     margin-right: 3px;
     margin-bottom: 5px;
 }
-
+main .cart_wrapper {
+  width: 90vw;
+  margin: 3rem;
+  height: fit-content;
+}
+main .cart_wrapper h3 {
+  padding-bottom: 1rem;
+  font-family: "Black Ops One", cursive;
+}
+main .cart_wrapper .cart_empty {
+  display: none;
+  position: relative;
+  text-align: center;
+  border-top: 2px dashed var(--secondColor);
+  border-bottom: 2px dashed var(--secondColor);
+}
+main .cart_wrapper .cart_empty img {
+  height: 300px;
+}
+main .cart_wrapper .cart_empty a {
+  left: 0;
+  width: 300px;
+  color: white;
+  bottom: -1.5rem;
+  text-align: left;
+  position: absolute;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--primaryColor);
+}
+main .cart_wrapper .cart_empty a:hover {
+  transform: scale(1.05);
+}
+main .cart_wrapper .cart_have_list {
+  position: relative;
+  border-top: 2px dashed var(--secondColor);
+  border-bottom: 2px dashed var(--secondColor);
+}
+main .cart_wrapper .cart_have_list .cart_item {
+  margin: 1rem;
+  display: grid;
+  grid-gap: 0.5rem;
+  cursor: pointer;
+  align-items: center;
+  grid-template-columns: 15% 30% 20% 15% 20%;
+}
+main .cart_wrapper .cart_have_list .cart_item img {
+  width: 50%;
+  object-fit: cover;
+}
+main .cart_wrapper .cart_have_list .cart_item span {
+  width: 100%;
+  overflow-x: hidden;
+}
+main .cart_wrapper .cart_have_list .cart_item input {
+  width: 100px;
+  text-align: center;
+}
+main .cart_wrapper .cart_have_list .cart_item input:focus-visible {
+  outline: none;
+}
+main .cart_wrapper .cart_have_list .cart_item .price {
+  font-size: 1.5vw;
+  color: var(--primaryColor);
+}
+main .cart_wrapper .cart_have_list .cart_item i {
+  cursor: pointer;
+}
+main .cart_wrapper .cart_have_list .cart_item i:hover {
+  color: var(--primaryColor);
+}
+main .cart_wrapper .cart_have_list .cart_item:hover {
+  background-color: rgba(204, 204, 204, 0.2705882353);
+}
+main .cart_wrapper .cart_have_list button {
+  right: 1rem;
+  bottom: 1rem;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--primaryColor);
+}
