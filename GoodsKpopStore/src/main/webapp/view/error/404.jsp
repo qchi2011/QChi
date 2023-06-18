@@ -44,7 +44,7 @@
     </head>
     <body>
         <!-- Header -->
-        <jsp:include page="../common/header.jsp" ></jsp:include>
+        <jsp:include page="../common/homepage/header.jsp" ></jsp:include>
         <!-- 404 Error Content -->
             <div class="page_404">
                 <div class="container">

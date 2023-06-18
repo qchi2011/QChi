@@ -44,7 +44,7 @@
     <body>
 
         <!-- Header Section -->
-        <jsp:include page="../../common/header.jsp"></jsp:include>
+        <jsp:include page="../../common/homepage/header.jsp"></jsp:include>
             <!-- Banner Section -->
             <div class="banner_section">
                 <div id="banner_carousel" class="carousel slide" data-ride="carousel">
@@ -88,7 +88,7 @@
         </div>
 
         <!-- Category -->
-        <jsp:include page="../../common/category.jsp" ></jsp:include> 
+        <jsp:include page="../../common/homepage/category.jsp" ></jsp:include> 
         <!-- Hot Section -->
             <div class="hot_section">
                 <h2>WHAT'S HOT</h2>
@@ -121,12 +121,12 @@
         <!--<div id="content" class="row">-->
             <%--<jsp:include page="../../common/category2.jsp" ></jsp:include>--%>
             <h2 style="text-align: center;">LET'S PICK</h2>
-            <jsp:include page="../../common/product.jsp" ></jsp:include>  
+            <jsp:include page="../../common/homepage/product.jsp" ></jsp:include>  
             </div>
             <!--Pagination-->
-            <jsp:include page="../../common/pagination.jsp"></jsp:include>
+    <jsp:include page="../../common/homepage/pagination.jsp"></jsp:include>
             <!-- Footer -->
-            <jsp:include page="../../common/footer.jsp"></jsp:include>
+    <jsp:include page="../../common/homepage/footer.jsp"></jsp:include>
 
 
     </body>
