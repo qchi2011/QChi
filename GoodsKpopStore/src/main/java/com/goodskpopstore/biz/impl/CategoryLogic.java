@@ -42,5 +42,10 @@ public class CategoryLogic implements IGenericLogic<Category>{
             throw new IllegalArgumentException();
         }
     }
+
+    @Override
+    public int insertToDb(Category t) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }

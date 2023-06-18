@@ -24,6 +24,10 @@
         <servlet-name>DashboardAdminServlet</servlet-name>
         <servlet-class>com.goodskpopstore.controller.admin.DashboardAdminServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddProductServlet</servlet-name>
+        <servlet-class>com.goodskpopstore.controller.admin.AddProductServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomePageServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -43,6 +47,10 @@
     <servlet-mapping>
         <servlet-name>DashboardAdminServlet</servlet-name>
         <url-pattern>/admin/dashboard</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddProductServlet</servlet-name>
+        <url-pattern>/admin/addProduct</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -11,7 +11,8 @@ import java.util.List;
  * @author Admin
  */
 public interface IGenericLogic<T> {
-    
+
     List<T> findAll();
-    
+
+    int insertToDb(T t);
 }

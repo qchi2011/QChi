@@ -34,7 +34,29 @@ public class ProductDAO extends DBContext<Product> implements IGenericDAO<Produc
 
     @Override
     public int insertToDb(Product t) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+       String sql = "INSERT INTO [Product]\n"
+                + "           ([name]\n"
+                + "           ,[description]\n"
+                + "           ,[price]\n"
+                + "           ,[quantity]\n"
+                + "           ,[image]\n"
+                + "           ,[categoryId])\n"
+                + "     VALUES\n"
+                + "           (?\n"
+                + "           ,?\n"
+                + "           ,?\n"
+                + "           ,?\n"
+                + "           ,?\n"
+                + "           ,?)";
+        int id = insert(sql,
+                new Parameter(t.getName(), Types.NVARCHAR),
+                new Parameter(t.getDescription(), Types.NVARCHAR),
+                new Parameter(t.getPrice(), Types.FLOAT),
+                new Parameter(t.getQuantity(), Types.INTEGER),
+                new Parameter(t.getImage(), Types.NVARCHAR),
+                new Parameter(t.getCategoryId(), Types.INTEGER)
+        );
+        return  id;       
     }
 
     public static void main(String[] args) {

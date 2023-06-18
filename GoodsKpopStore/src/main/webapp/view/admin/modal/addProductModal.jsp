@@ -1,5 +1,5 @@
 <%-- 
-    Document   : addBookModal
+    Document   : addProductModal
     Created on : Jun 17, 2023, 8:12:06 PM
     Author     : ADMIN
 --%>
@@ -20,28 +20,22 @@
     </head>
     <body>
         <!-- Modal -->
-        <div class="modal fade" id="addBookModal" tabindex="-1" role="dialog" aria-labelledby="addBookModalLabel" aria-hidden="true">
+        <div class="modal fade" id="addProductModal" tabindex="-1" role="dialog" aria-labelledby="addProductModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="addBookModalLabel">Add Book</h5>
+                        <h5 class="modal-title" id="addProductModalLabel">Add Product</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form id="addBookForm" action="addBook" method="POST" enctype="multipart/form-data">
+                        <form id="addProductForm" action="addProduct" method="POST" enctype="multipart/form-data">
                             <!--Name-->
                             <div class="form-group">
                                 <label for="name">Name:</label>
                                 <input type="text" class="form-control" id="nameInput" name="name">
                                 <div id="nameError" class="error"></div>
-                            </div>
-                            <!--Author-->
-                            <div class="form-group">
-                                <label for="author">Author:</label>
-                                <input type="text" class="form-control" id="authorInput" name="author">
-                                <div id="authorError" class="error"></div>
                             </div>
                             <!--Price-->
                             <div class="form-group">
@@ -91,7 +85,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary" form="addBookForm" onclick="validateForm()">Add</button>
+                        <button type="submit" class="btn btn-primary" form="addProductForm" onclick="validateForm()">Add</button>
                     </div>
                 </div>
             </div>
@@ -100,7 +94,6 @@
         <script>
             function validateForm() {
                 let name = $('#nameInput').val();
-                let author = $('#authorInput').val();
                 let price = $('#priceInput').val();
                 let quantity = $('#quantityInput').val();
 
@@ -108,23 +101,19 @@
                 $('.error').html('');
 
                 if (name === '') {
-                    $('#nameError').html('Tên sách không được để trống');
-                }
-
-                if (author === '') {
-                    $('#authorError').html('Tên tác giả không được để trống');
+                    $('#nameError').html('Name of product must not be empty');
                 }
 
                 if (price === '') {
-                    $('#priceError').html('Giá của quyển sách không được để trống');
+                    $('#priceError').html('Price of product must not be empty');
                 } else if (!$.isNumeric(price) || parseFloat(price) < 0) {
-                    $('#priceError').html('Giá của quyển sách phải là số và không được nhỏ hơn 0');
+                    $('#priceError').html('Price of product must be digits and greater than 0');
                 }
 
                 if (quantity === '') {
-                    $('#quantityError').html('Số lượng sách không được để trống');
-                } else if (!$.isNumeric(quantity) || parseInt(price) < 0) {
-                    $('#priceError').html('Số lượng của quyển sách phải là số và không được nhỏ hơn 0');
+                    $('#quantityError').html('Quantity of product must not be empty');
+                } else if (!$.isNumeric(quantity) || parseInt(quantity) < 0) {
+                    $('#quantityError').html('Quantity of product must be digits and greater than 0');
                 }
 
                 // Kiểm tra nếu không có lỗi thì submit form

@@ -248,6 +248,8 @@ public class DBContext<T> {
                     statement.setBoolean(index, (Boolean) object.getValue());
                 } else if (object.getValue() instanceof BigDecimal) {
                     statement.setBigDecimal(index, (BigDecimal) object.getValue());
+                }else if (object.getValue() instanceof Float) {
+                    statement.setFloat(index, (float) object.getValue());
                 }
             }
         } catch (SQLException e) {

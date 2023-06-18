@@ -7,6 +7,7 @@ package com.goodskpopstore.biz.impl;
 import com.goodskpopstore.biz.IGenericLogic;
 import com.goodskpopstore.dal.impl.ProductDAO;
 import com.goodskpopstore.entity.Product;
+import com.sun.corba.se.impl.oa.poa.AOMEntry;
 import constant.CommonConst;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
@@ -71,5 +72,10 @@ public class ProductLogic implements IGenericLogic<Product> {
     public List<Product> findProductByCategory(int page, int categoryId) {
         List<Product> listByCurrentPage = dao.findProductByCategory(page, categoryId);
         return listByCurrentPage;
+    }
+
+    @Override
+    public int insertToDb(Product t) {
+        return dao.insertToDb(t);
     }
 }
