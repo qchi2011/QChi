@@ -34,8 +34,8 @@ public class AddProductServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        ProductLogic bookLogic = new ProductLogic();
-        Book book =new Book();
+        ProductLogic productLogic = new ProductLogic();
+        Product product =new Product();
         
         //get information
         //get name
@@ -56,7 +56,7 @@ public class AddProductServlet extends HttpServlet {
         
         try {
             File dir = new File(request.getServletContext().getRealPath(
-                    CommonConst.SLASH + CommonConst.FOLDER_BOOK_IMAGES));
+                    CommonConst.SLASH + CommonConst.FOLDER_PRODUCT_IMAGES));
             if (!dir.exists()) {
                 //tao ra duong dan do
                 dir.mkdirs();
@@ -64,20 +64,20 @@ public class AddProductServlet extends HttpServlet {
             
             File image = new File(dir, part.getSubmittedFileName());
             part.write(image.getAbsolutePath());
-            book.setImage(CommonConst.FOLDER_BOOK_IMAGES + CommonConst.SLASH + image.getName());
+            product.setImage("/GoodsKpopStore/" + CommonConst.FOLDER_PRODUCT_IMAGES + CommonConst.SLASH + image.getName());
         } catch (Exception e) {
             e.printStackTrace();
         }
         
         //setter parameter
-        book.setName(name);
-        book.setPrice(price);
-        book.setQuantity(quantity);
-        book.setDescription(description);
-        book.setCategoryId(categoryId);
+        product.setName(name);
+        product.setPrice(price);
+        product.setQuantity(quantity);
+        product.setDescription(description);
+        product.setCategoryId(categoryId);
         
         //insert to db
-        bookLogic.insertToDb(book);
+        productLogic.insertToDb(product);
         
         //redirect to homepage
         response.sendRedirect("dashboard");

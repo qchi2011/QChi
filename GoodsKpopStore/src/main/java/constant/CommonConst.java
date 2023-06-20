@@ -10,4 +10,6 @@ package constant;
  */
 public class CommonConst {
     public static final int PRODUCT_RECORD_PER_PAGE = 8;
+    public static final String FOLDER_PRODUCT_IMAGES = "images";
+    public static final String SLASH = "/";
 }

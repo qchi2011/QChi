@@ -112,8 +112,8 @@
 
                 if (quantity === '') {
                     $('#quantityError').html('Quantity of product must not be empty');
-                } else if (!$.isNumeric(quantity) || parseInt(quantity) < 0) {
-                    $('#quantityError').html('Quantity of product must be digits and greater than 0');
+                } else if (!$.isNumeric(quantity) || parseInt(quantity) <= 0) {
+                    $('#quantityError').html('Quantity of product must be digits and greater or equal than 0');
                 }
 
                 // Kiểm tra nếu không có lỗi thì submit form
