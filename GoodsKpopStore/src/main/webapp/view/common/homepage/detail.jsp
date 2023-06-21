@@ -1,6 +1,6 @@
 <%-- 
-    Document   : cart
-    Created on : Jun 16, 2023, 2:38:46 AM
+    Document   : detail
+    Created on : Jun 21, 2023, 8:10:12 AM
     Author     : Admin
 --%>
 
@@ -23,6 +23,7 @@
               crossorigin="anonymous">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/web.css">
 
+
         <!-- Icon -->
         <script src="https://kit.fontawesome.com/756da913d7.js" crossorigin="anonymous"></script>
 
@@ -36,8 +37,8 @@
     <body>
 
         <!-- Header Section -->
-        <nav class="headerNav_section cart_page">
-            <a href="view/user/homepage/index.jsp" class="logo"><span>QC</span>Select</a>
+        <nav class="headerNav_section detail_page">
+            <a href="/" class="logo"><span>QC</span>Select</a>
             <div class="feature_wrapper">
                 <input type="checkbox" hidden id="en_search">
                 <form action="" method="POST">
@@ -53,31 +54,17 @@
         <!-- Main Section -->
         <main>
 
-            <!-- Cart Section -->
-            <div class="cart_wrapper ">
-                <h3>SHOPPING CART</h3>
-                <div class="cart_empty">
-                    <img src="/images/cart_empty.jpg" alt="cart_empty_img">
-                    <a href="/">Go Shopping</a>
-                </div>
-                <div class="cart_have_list">
-                    <form action="" method="POST">
-                        <div class="cart_item">
-                            <img src="/images/hot_1.jpg" alt="cart_item_img">
-                            <span>WINNER 2022 CONCERT [THE CIRCLE] KiT VIDEO</span>
-                            <input type="number" min="1" max="99" value ="1">
-                            <span class="price">310.000</span>
-                            <i class="fa-sharp fa-solid fa-trash"></i>
-                        </div>
-                        <div class="cart_item">
-                            <img src="/images/hot_2.jpg" alt="cart_item_img">
-                            <span>WINNER 2022 CONCERT [THE CIRCLE] KiT VIDEO</span>
-                            <input type="number" min="1" max="99" value ="1">
-                            <span class="price">310.000</span>
-                            <i class="fa-sharp fa-solid fa-trash"></i>
-                        </div>
-                        <button type="submit">Select Buy</button>
-                    </form>
+            <div class="product_detail_wrapper">
+                <img src="/images/hot_1.jpg" alt="product_img">
+                <div class="product_infor">
+                    <span class="product_cate">Music</span>
+                    <h1>WINNER 2022 CONCERT [THE CIRCLE] KiT VIDEO</h1>
+                    <span class="product_price">310.000</span>
+                    <input type="number" min="1" max="99">
+                    <div class="product_action">
+                        <button>Add Cart</button>
+                        <button>Buy</button>
+                    </div>
                 </div>
             </div>
 

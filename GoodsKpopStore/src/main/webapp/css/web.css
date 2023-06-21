@@ -75,6 +75,16 @@ a:hover {
     opacity: 1;
 }
 
+.detail_page ,.cart_page{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: sticky;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
 .banner_section {
     position: relative;
     margin-bottom: 5rem;
@@ -175,11 +185,6 @@ a:hover {
     margin-top: 1rem;
     font-size: 1.5vw;
     font-weight: bold;
-}
-.hot_list_item span {
-    font-family: 'Anuphan', sans-serif;
-    font-weight: bold;
-
 }
 .footer-distributed{
     background: #666;
@@ -314,88 +319,140 @@ a:hover {
     margin-right: 3px;
     margin-bottom: 5px;
 }
-main .cart_wrapper {
-  width: 90vw;
-  margin: 3rem;
-  height: fit-content;
+  .cart_wrapper {
+    width: 90vw;
+    margin: 3rem;
+    height: fit-content;
 }
-main .cart_wrapper h3 {
-  padding-bottom: 1rem;
-  font-family: "Black Ops One", cursive;
+  .cart_wrapper h3 {
+    padding-bottom: 1rem;
+    font-family: "Raleway", sans-serif;
+
 }
-main .cart_wrapper .cart_empty {
-  display: none;
-  position: relative;
-  text-align: center;
-  border-top: 2px dashed var(--secondColor);
-  border-bottom: 2px dashed var(--secondColor);
+  .cart_wrapper .cart_empty {
+    display: none;
+    position: relative;
+    text-align: center;
+    border-top: 2px dashed var(--secondColor);
+    border-bottom: 2px dashed var(--secondColor);
 }
-main .cart_wrapper .cart_empty img {
-  height: 300px;
+  .cart_wrapper .cart_empty img {
+    height: 300px;
 }
-main .cart_wrapper .cart_empty a {
-  left: 0;
-  width: 300px;
-  color: white;
-  bottom: -1.5rem;
-  text-align: left;
-  position: absolute;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  background-color: var(--primaryColor);
+  .cart_wrapper .cart_empty a {
+    left: 0;
+    width: 300px;
+    color: white;
+    bottom: -1.5rem;
+    text-align: left;
+    position: absolute;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--primaryColor);
 }
-main .cart_wrapper .cart_empty a:hover {
-  transform: scale(1.05);
+  .cart_wrapper .cart_empty a:hover {
+    transform: scale(1.05);
 }
-main .cart_wrapper .cart_have_list {
-  position: relative;
-  border-top: 2px dashed var(--secondColor);
-  border-bottom: 2px dashed var(--secondColor);
+  .cart_wrapper .cart_have_list {
+    position: relative;
+    border-top: 2px dashed var(--secondColor);
+    border-bottom: 2px dashed var(--secondColor);
 }
-main .cart_wrapper .cart_have_list .cart_item {
-  margin: 1rem;
-  display: grid;
-  grid-gap: 0.5rem;
-  cursor: pointer;
-  align-items: center;
-  grid-template-columns: 15% 30% 20% 15% 20%;
+  .cart_wrapper .cart_have_list .cart_item {
+    margin: 1rem;
+    display: grid;
+    grid-gap: 0.5rem;
+    cursor: pointer;
+    align-items: center;
+    grid-template-columns: 15% 30% 20% 15% 20%;
 }
-main .cart_wrapper .cart_have_list .cart_item img {
-  width: 50%;
-  object-fit: cover;
+  .cart_wrapper .cart_have_list .cart_item img {
+    width: 50%;
+    object-fit: cover;
 }
-main .cart_wrapper .cart_have_list .cart_item span {
-  width: 100%;
-  overflow-x: hidden;
+  .cart_wrapper .cart_have_list .cart_item span {
+    width: 100%;
+    overflow-x: hidden;
 }
-main .cart_wrapper .cart_have_list .cart_item input {
-  width: 100px;
-  text-align: center;
+  .cart_wrapper .cart_have_list .cart_item input {
+    width: 100px;
+    text-align: center;
 }
-main .cart_wrapper .cart_have_list .cart_item input:focus-visible {
-  outline: none;
+  .cart_wrapper .cart_have_list .cart_item input:focus-visible {
+    outline: none;
 }
-main .cart_wrapper .cart_have_list .cart_item .price {
-  font-size: 1.5vw;
-  color: var(--primaryColor);
+  .cart_wrapper .cart_have_list .cart_item .price {
+    font-size: 1.5vw;
+    color: var(--primaryColor);
 }
-main .cart_wrapper .cart_have_list .cart_item i {
-  cursor: pointer;
+  .cart_wrapper .cart_have_list .cart_item i {
+    cursor: pointer;
 }
-main .cart_wrapper .cart_have_list .cart_item i:hover {
-  color: var(--primaryColor);
+  .cart_wrapper .cart_have_list .cart_item a:hover {
+    color: var(--primaryColor);
 }
-main .cart_wrapper .cart_have_list .cart_item:hover {
-  background-color: rgba(204, 204, 204, 0.2705882353);
+  .cart_wrapper .cart_have_list .cart_item:hover {
+    background-color: rgba(204, 204, 204, 0.2705882353);
 }
-main .cart_wrapper .cart_have_list button {
-  right: 1rem;
-  bottom: 1rem;
-  border: none;
-  color: white;
-  cursor: pointer;
-  position: absolute;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  background-color: var(--primaryColor);
+  .cart_wrapper .cart_have_list button {
+    right: 1rem;
+    bottom: 1rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--primaryColor);
 }
+  .product_detail_wrapper {
+    gap: 2rem;
+    display: flex;
+    padding: 1rem 0;
+    flex-wrap: nowrap;
+    margin: 1rem 3rem;
+}
+  .product_detail_wrapper img {
+    width: 50%;
+    object-fit: cover;
+}
+  .product_detail_wrapper .product_infor {
+    width: 45%;
+    padding: 1rem 0;
+}
+  .product_detail_wrapper .product_infor .product_cate {
+    color: #ccc;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+}
+  .product_detail_wrapper .product_infor h1 {
+    font-family: "Black Ops One", cursive;
+    margin-bottom: 3rem;
+}
+  .product_detail_wrapper .product_infor .product_price {
+    color: red;
+    padding: 1rem;
+    font-size: 2vw;
+    background-color: yellow;
+}
+  .product_detail_wrapper .product_infor input {
+    width: 200px;
+    margin: 3rem 0;
+    display: block;
+    text-align: center;
+}
+  .product_detail_wrapper .product_infor input:focus-visible {
+    outline: none;
+}
+  .product_detail_wrapper .product_infor button {
+    border: none;
+    cursor: pointer;
+    margin-right: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+  .product_detail_wrapper .product_infor button:hover {
+    transform: scale(1.05);
+}
+
+/*# sourceMappingURL=app.css.map */
