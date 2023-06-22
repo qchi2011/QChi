@@ -50,11 +50,14 @@ public class ProductLogic implements IGenericLogic<Product> {
     }
 
     public int findTotalPage(int totalRecord) {
-        int result = totalRecord % CommonConst.PRODUCT_RECORD_PER_PAGE;
-        if (result % 2 != 0) {
-            return result++;
+//       Tong so trang: 11
+        int totalPage = totalRecord / CommonConst.PRODUCT_RECORD_PER_PAGE;
+//       So san pham con du: 4
+        int du = totalRecord % CommonConst.PRODUCT_RECORD_PER_PAGE;
+        if ( du >  0) {
+            return ++totalPage;
         } else {
-            return result;
+            return totalPage;
         }
 
     }
@@ -77,5 +80,9 @@ public class ProductLogic implements IGenericLogic<Product> {
     @Override
     public int insertToDb(Product t) {
         return dao.insertToDb(t);
+    }
+    @Override
+    public void updateToDb(Product t) {
+        dao.updateToDb(t);
     }
 }

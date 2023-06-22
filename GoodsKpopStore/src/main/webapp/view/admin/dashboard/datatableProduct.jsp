@@ -11,7 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <script src="https://kit.fontawesome.com/756da913d7.js" crossorigin="anonymous"></script>
+        
     </head>
     <body>
         <div class="card mb-3">
@@ -46,10 +46,12 @@
                                     <td>${product.description}</td>
                                         <!--Edit-->
                                     <td style="text-align:center"> 
-                                        <i class="fa-sharp fa-solid fa-edit" data-toggle="modal" data-target="#editProductModal"> </i>
+                                        <i class="fa fa-edit" data-toggle="modal" data-target="#editProductModal" 
+                                           onclick="editProductModal(
+                                           ${product.id},`${product.name}`,`${product.description}`,${product.price},${product.quantity},`${product.image}`,${product.categoryId} )"></i>
                                         &nbsp;&nbsp;
                                         <!--Delete-->
-                                        <i class="fa-sharp fa-solid fa-trash"> </i>   
+                                        <i class="fa fa-trash"> </i>   
 
                                     </td>
 
@@ -63,4 +65,5 @@
             <jsp:include page="../modal/editProductModal.jsp"></jsp:include>
         </div>
     </body>
+   
 </html>

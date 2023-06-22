@@ -107,4 +107,25 @@ public class ProductDAO extends DBContext<Product> implements IGenericDAO<Produc
         return listByCurrentPage;
     }
 
+    @Override
+    public void updateToDb(Product t) {
+       String sql = "UPDATE [Product]\n"
+                + "   SET [name] = ?\n"
+                + "      ,[description] = ?\n"
+                + "      ,[price] = ?\n"
+                + "      ,[quantity] = ?\n"
+                + "      ,[image] = ?\n"
+                + "      ,[categoryId] = ?\n"
+                + " WHERE id = ?";
+        update(sql,
+                new Parameter(t.getName(), Types.NVARCHAR),
+                new Parameter(t.getDescription(), Types.NVARCHAR),
+                new Parameter(t.getPrice(), Types.FLOAT),
+                new Parameter(t.getQuantity(), Types.INTEGER),
+                new Parameter(t.getImage(), Types.NVARCHAR),
+                new Parameter(t.getCategoryId(), Types.INTEGER),
+                new Parameter(t.getId(), Types.INTEGER)
+        );
+    }
+
 }

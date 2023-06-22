@@ -32,4 +32,9 @@ public class CategoryDAO extends DBContext<Category> implements IGenericDAO<Cate
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    @Override
+    public void updateToDb(Category t) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }

@@ -31,4 +31,7 @@ public interface IGenericDAO<T> {
      * @return 
      */
     int insertToDb(T t);
+    
+    void updateToDb(T t);
+
 }

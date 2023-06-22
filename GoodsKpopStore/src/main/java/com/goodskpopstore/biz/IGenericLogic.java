@@ -15,4 +15,6 @@ public interface IGenericLogic<T> {
     List<T> findAll();
 
     int insertToDb(T t);
+    
+    void updateToDb(T t);
 }

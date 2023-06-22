@@ -33,13 +33,16 @@ public class HomePageServlet extends HttpServlet {
         HttpSession session = request.getSession();
         //get total product in dtb
         int totalRecord = productLogic.findTotalRecord("");
-
+        
         //get total page
         int totalPage = productLogic.findTotalPage(totalRecord);
-
         //get current page
         int page = productLogic.findCurrentPage(request);
-
+        
+        if( page >= totalPage){
+            page = totalPage;
+        }
+        
         //get list product by currentpage
         List<Product> listByCurrentPage = productLogic.findProductByPage(page, "");
 

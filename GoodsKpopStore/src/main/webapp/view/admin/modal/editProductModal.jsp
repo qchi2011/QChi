@@ -5,14 +5,7 @@
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <div class="modal fade" id="editProductModal" tabindex="-1" role="dialog" aria-labelledby="editProductModalLabel" aria-hidden="true">
+      <div class="modal fade" id="editProductModal" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -23,30 +16,34 @@
                     </div>
                     <div class="modal-body">
                         <form id="editProductForm" action="editProduct" method="POST" enctype="multipart/form-data">
+                            <!--id-->
+                            <div class="form-group" style="display: none">
+                                <input type="text" class="form-control" id="idEditInput" name="id" />
+                            </div>
                             <!--Name-->
                             <div class="form-group">
                                 <label for="name">Name:</label>
-                                <input type="text" class="form-control" id="nameEdit" name="name">
+                                <input type="text" class="form-control" id="nameEditInput" name="name" />
                                 <div id="nameEditError" class="error"></div>
                             </div>
                             <!--Price-->
                             <div class="form-group">
                                 <label for="price">Price:</label>
-                                <input type="text" class="form-control" id="priceEdit" name="price">
+                                <input type="text" class="form-control" id="priceEditInput" name="price"/>
                                 <div id="priceEditError" class="error"></div>
                             </div>
                             <!--Quantity-->
                             <div class="form-group">
                                 <label for="quantity">Quantity:</label>
-                                <input type="text" class="form-control" id="quantityEdit" name="quantity">
+                                <input type="text" class="form-control" id="quantityEditInput" name="quantity"/>
                                 <div id="quantityEditError" class="error"></div>
                             </div>
                             <!--Category-->
                             <div class="form-group">
                                 <label for="category">Category: </label>
                                 <div class="input-group">
-                                    <select class="custom-select" id="categoryEdit" name="category">
-                                        <c:forEach items ="${listCategories}" var="category">
+                                    <select class="custom-select" id="categoryEditInput" name="category">
+                                        <c:forEach items="${listCategories}" var="category">
                                             <option value="${category.id}">${category.name}</option>
                                         </c:forEach>
                                     </select>
@@ -63,31 +60,37 @@
                                         <span class="input-group-text">Upload</span>
                                     </div>
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="imageEdit" name="image" onchange="displayImage2(this)">
+                                        <input type="file" class="custom-file-input" id="imageEdit" name="image"
+                                            onchange="displayImage2(this)"/>
                                         <label class="custom-file-label">Choose file</label>
                                     </div>
                                 </div>
-                                <img id="previewImage2" src="#" alt="Preview" style="display: none; max-width: 300px; max-height: 300px;">
+                                <img id="previewImage2" src="#" alt="Preview"
+                                    style="display: none; max-width: 300px; max-height: 300px;">
+
                             </div>
                             <!--Description-->
                             <div class="form-group">
-                                <label for="descriptionEdit">Description:</label>
-                                <textarea class="form-control" id="descriptionEdit" name="description"></textarea>
+                                <label for="descriptionEditInput">Description:</label>
+                                <textarea class="form-control" id="descriptionEditInput" name="description"></textarea>
                             </div>
                         </form>
                     </div>
+                    
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary" form="editProductForm" onclick="validateForm2()">Edit</button>
+                        <button type="submit" class="btn btn-primary" form="editProductForm"
+                            onclick="validateForm2()">Edit</button>
                     </div>
                 </div>
             </div>
         </div>
+
         <script>
             function validateForm2() {
-                let name = $('#nameEdit').val();
-                let price = $('#priceEdit').val();
-                let quantity = $('#quantityEdit').val();
+                let name = $('#nameEditInput').val();
+                let price = $('#priceEditInput').val();
+                let quantity = $('#quantityEditInput').val();
 
                 //xoá thông báo lỗi hiện tại
                 $('.error').html('');
@@ -104,7 +107,7 @@
 
                 if (quantity === '') {
                     $('#quantityEditError').html('Quantity of product must not be empty');
-                } else if (!$.isNumeric(quantity) || parseInt(quantity) <= 0) {
+                } else if (!$.isNumeric(quantity) || parseInt(price) < 0) {
                     $('#quantityEditError').html('Quantity of product must be digits and greater or equal than 0');
                 }
 
@@ -119,8 +122,7 @@
                     event.preventDefault();
                 }
             }
-            
-            
+
             function displayImage2(input) {
                 var previewImage = document.getElementById("previewImage2");
                 var file = input.files[0];
@@ -133,6 +135,19 @@
 
                 reader.readAsDataURL(file);
             }
+
+            function editProductModal(id, name, description, price, quantity, image, categoryId) {
+                $('#idEditInput').val(id);
+                console.log(id);
+                $('#nameEditInput').val(name);
+                $('#priceEditInput').val(price);
+                $('#quantityEditInput').val(quantity);
+                $('#categoryEditInput').val(categoryId);
+                $('#descriptionEditInput').val(description);
+                $('#previewImage2').attr('src',image);
+                $('#previewImage2').css('display','block');
+            }
+
         </script>
     </body>
 </html>

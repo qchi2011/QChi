@@ -8,7 +8,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
-        <meta name="author" content="">
 
         <title>Admin - Dashboard</title>
 
@@ -76,17 +75,13 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
                 integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30WpbsGTqbIiAwxTsbe76DErLq5EDQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdn.usebootstrap.com/bootstrap/4-3-1/js/bootstrap.bundle.min.js"></script>
-
+    
         <!-- Core plugin JavaScript-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"
                 integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
         <!-- Page level plugin JavaScript-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
-                integrity="sha512-mf78KukU/a8rjr7aBRvCa2Vwg/q0tUjJhLtcK53PHEbFwCEqQ5durlzvVTgQgKpv+fyNMT6ZQT1Aq6tpNqf1mg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.19/js/jquery.dataTables.min.js"
                 integrity="sha512-c2bQrjZ1iFm8q28SJKvX+A/H6ItQ+jumpms8XGVRkpc2lWxiNl1WcoI4pf0g5/1tDfcShv7oTwzWF3qizR03ZQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -99,8 +94,7 @@
 
         <!-- Demo scripts for this page-->
         <script src="${pageContext.request.contextPath}/js/demo/datatables-demo.js"></script>
-        <script src="${pageContext.request.contextPath}/js/demo/chart-area-demo.js"></script>
-
+        
     </body>
 
 </html>
