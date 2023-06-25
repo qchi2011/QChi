@@ -60,7 +60,7 @@
                     <span class="product_cate">Music</span>
                     <h1>WINNER 2022 CONCERT [THE CIRCLE] KiT VIDEO</h1>
                     <span class="product_price">310.000</span>
-                    <input type="number" min="1" max="99">
+                    <input type="number" min="1" max="99" value=1>
                     <div class="product_action">
                         <button>Add Cart</button>
                         <button>Buy</button>
