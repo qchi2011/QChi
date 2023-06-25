@@ -128,4 +128,11 @@ public class ProductDAO extends DBContext<Product> implements IGenericDAO<Produc
         );
     }
 
+    @Override
+    public void delete(Product t) {
+      String sql = "DELETE FROM PRODUCT\n"
+                    + "WHERE id = ?";
+        update(sql, new Parameter(t.getId(),Types.INTEGER));
+    }
+
 }

@@ -33,5 +33,7 @@ public interface IGenericDAO<T> {
     int insertToDb(T t);
     
     void updateToDb(T t);
+    
+    void delete(T t);
 
 }

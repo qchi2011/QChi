@@ -11,7 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        
+
     </head>
     <body>
         <div class="card mb-3">
@@ -44,14 +44,14 @@
                                     <td>${product.price}</td>
                                     <td>${product.quantity}</td>
                                     <td>${product.description}</td>
-                                        <!--Edit-->
+                                    <!--Edit-->
                                     <td style="text-align:center"> 
                                         <i class="fa fa-edit" data-toggle="modal" data-target="#editProductModal" 
                                            onclick="editProductModal(
-                                           ${product.id},`${product.name}`,`${product.description}`,${product.price},${product.quantity},`${product.image}`,${product.categoryId} )"></i>
+                                           ${product.id}, `${product.name}`, `${product.description}`,${product.price},${product.quantity}, `${product.image}`,${product.categoryId})"></i>
                                         &nbsp;&nbsp;
                                         <!--Delete-->
-                                        <i class="fa fa-trash"> </i>   
+                                        <i class="fa fa-trash" data-toggle="modal" data-target="#delete-modal" onclick="deleteProductModal(${product.id})"></i>  
 
                                     </td>
 
@@ -63,7 +63,9 @@
             </div>
             <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
             <jsp:include page="../modal/editProductModal.jsp"></jsp:include>
+            <jsp:include page="../modal/deleteProductModal.jsp"></jsp:include>
+
         </div>
     </body>
-   
+
 </html>

@@ -85,4 +85,9 @@ public class ProductLogic implements IGenericLogic<Product> {
     public void updateToDb(Product t) {
         dao.updateToDb(t);
     }
+
+    public void delete(Product t) {
+        dao.delete(t);
+    }
+
 }

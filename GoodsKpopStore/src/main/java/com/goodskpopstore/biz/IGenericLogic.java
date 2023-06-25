@@ -17,4 +17,6 @@ public interface IGenericLogic<T> {
     int insertToDb(T t);
     
     void updateToDb(T t);
+    
+    void delete(T t);
 }

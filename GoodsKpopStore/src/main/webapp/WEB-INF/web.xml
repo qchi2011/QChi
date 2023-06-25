@@ -32,6 +32,10 @@
         <servlet-name>EditProductServlet</servlet-name>
         <servlet-class>com.goodskpopstore.controller.admin.EditProductServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteProductServlet</servlet-name>
+        <servlet-class>com.goodskpopstore.controller.admin.DeleteProductServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomePageServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -59,6 +63,10 @@
     <servlet-mapping>
         <servlet-name>EditProductServlet</servlet-name>
         <url-pattern>/admin/editProduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteProductServlet</servlet-name>
+        <url-pattern>/admin/deleteProduct</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
