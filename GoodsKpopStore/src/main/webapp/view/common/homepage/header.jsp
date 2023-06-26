@@ -23,9 +23,22 @@
                 </form>
                 <label for="en_search" class="fa-solid fa-magnifying-glass"></label>
                 <a class="fa-solid fa-cart-shopping" href="view/common/homepage/cart.jsp" ></a>
-                <a class="fa-sharp fa-solid fa-user" href="view/common/homepage/login.jsp"></a>
-                    
-                </i>
+                <c:if test="${sessionScope.account == null}">
+                <a class="fa-sharp fa-solid fa-user" href="${pageContext.request.contextPath}/login"></a>
+<!--                <a href="${pageContext.request.contextPath}/login">
+                        <button class="btn btn-outline-primary">
+                            Log in
+                        </button>
+                    </a>-->
+                </c:if> 
+                <c:if test="${sessionScope.account != null}">
+                <a class="fa-sharp fa-solid fa-sign-out" href="${pageContext.request.contextPath}/logout"></a>
+<!--                    <a href="${pageContext.request.contextPath}/logout">
+                        <button class="btn btn-outline-primary">
+                            Log Out
+                        </button>
+                    </a>-->
+                </c:if>
             </div>
         </nav>
     </body>

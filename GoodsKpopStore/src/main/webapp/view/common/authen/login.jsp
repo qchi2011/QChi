@@ -13,7 +13,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        
         <!-- Title -->
         <title>QC Select</title>
 
@@ -22,7 +22,7 @@
 
         <!-- Font -->
         <style>
-            @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Raleway:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Raleway:wght@500&display=swap');
         </style>
 
     </head>
@@ -39,13 +39,13 @@
                         <h1>Sign In</h1>
                         <div class="input_item">
                             <label class="fa-solid fa-envelope"></label>
-                            <input type="text" placeholder="Username" name="username" required=""/>
+                            <input type="text" placeholder="Username" name="username" id="username" required=""/>
                         </div>
                         <div class="input_item">
                             <label class="fa-solid fa-lock"></label>
-                            <input type="password" placeholder="Password" name="password" required=""/>
+                            <input type="password" placeholder="Password" name="password" id="password" required=""/>
                         </div>
-                        <div id="err" style="color: red">${error}</div>
+                        <div id="err" style="color:red ;font-size:12px" >${error}</div>                        
                         <button type="submit">Sign In</button>
                         <a href="">Forgot your password?</a>
                         <div class="social_container">
@@ -80,7 +80,7 @@
                             <label class="fa-solid fa-home"></label>
                             <input type="text" placeholder="Address" name="address" required=""/>
                         </div>
-                        <div id="err" style="color: red">${error}</div>
+                        <div id="err" style="color:red ;font-size:12px" >${error2}</div>
                         <button type="submit">Sign Up</button>
 
 
@@ -90,14 +90,12 @@
                     <div class="overlay">
                         <div class="overlay_section section_right">
                             <h1>Hello, Friend!</h1>
-                            <p>Enter your personal details and start journey with us</p>
-                            <div id="err" style="color: red">${error}</div>
+                            <p>Enter your personal details and start journey with us</p>      
                             <button class="btn_show" id="signUp">Sign Up</button>
                         </div>
                         <div class="overlay_section section_left">
                             <h1>Welcome Back!</h1>
                             <p>To keep connected with us please login with your personal info</p>
-                            <div id="err" style="color: red">${error}</div>
                             <button class="btn_show" id="signIn">Sign In</button>
                         </div>
                     </div>
