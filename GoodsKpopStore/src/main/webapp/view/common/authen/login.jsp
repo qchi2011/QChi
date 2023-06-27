@@ -33,20 +33,20 @@
                 <a href="home">
                     <h3><span>QC</span>Select</h3> 
                 </a>
-
+                <c:set var="cookie" value="${pageContext.request.cookies}" />
                 <div class="form_container sign_in_form">
                     <form action="login" method="POST">
                         <h1>Sign In</h1>
                         <div class="input_item">
                             <label class="fa-solid fa-envelope"></label>
-                            <input type="text" placeholder="Username" name="username" id="username" required=""/>
+                            <input type="text" placeholder="Username" name="username" id="username" value="${cookie.username.value}" required=""/>
                         </div>
                         <div class="input_item">
                             <label class="fa-solid fa-lock"></label>
-                            <input type="password" placeholder="Password" name="password" id="password" required=""/>
+                            <input type="password" placeholder="Password" name="password" id="password" value="${cookie.password.value}" required=""/>
                         </div>
                         <div class="group" style="margin-right: 75px">
-                            <input id="check check" type="checkbox" class="check" style="accent-color: #E49393; ">
+                            <input id="check check" type="checkbox" class="check" name="remember" style="accent-color: #E49393; ">
                             <label for="check" style="font-size: 13px;"><span class="icon"></span> Keep me signed in</label>
                         </div>
                         <div id="err" style="color:red ;font-size:12px; margin-top: 10px" >${err}</div>                        

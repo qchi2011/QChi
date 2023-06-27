@@ -9,6 +9,7 @@ import com.goodskpopstore.entity.Account;
 import com.goodskpopstore.constant.CommonConst;
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -35,6 +36,20 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         //get password
         String password = request.getParameter("password");
+        //get rem
+        String remember = request.getParameter("remember");
+        //create cookie for username and password
+        Cookie cuser = new Cookie("username", username);
+        cuser.setMaxAge(60 * 60 * 24);
+        Cookie cpass = new Cookie("password", password);
+        if (remember != null) {
+            cpass.setMaxAge(60 * 60 * 24);
+        } else {
+            cuser.setMaxAge(0);
+            cpass.setMaxAge(0);
+        }
+        response.addCookie(cuser);
+        response.addCookie(cpass);
         //create instance
         Account account = Account.builder().username(username).password(password).build();
         account = accountLogic.findAccount(account, CommonConst.FIND_ACCOUNT_BY_USERNAME_PASSWORD);
