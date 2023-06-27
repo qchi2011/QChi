@@ -6,7 +6,7 @@ package com.goodskpopstore.controller.authen;
 
 import com.goodskpopstore.biz.impl.AccountLogic;
 import com.goodskpopstore.entity.Account;
-import constant.CommonConst;
+import com.goodskpopstore.constant.CommonConst;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

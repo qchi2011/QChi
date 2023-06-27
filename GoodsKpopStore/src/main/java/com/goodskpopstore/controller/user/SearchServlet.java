@@ -7,7 +7,7 @@ package com.goodskpopstore.controller.user;
 import com.goodskpopstore.biz.impl.ProductLogic;
 import com.goodskpopstore.entity.PageControl;
 import com.goodskpopstore.entity.Product;
-import constant.CommonConst;
+import com.goodskpopstore.constant.CommonConst;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;

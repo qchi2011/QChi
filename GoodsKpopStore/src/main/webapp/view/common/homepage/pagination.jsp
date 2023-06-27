@@ -36,5 +36,10 @@
                     </c:if>
             </ul>
         </section>
+        <style>
+            section{
+                margin: 30px 0;
+            }  
+        </style>
     </body>
 </html>

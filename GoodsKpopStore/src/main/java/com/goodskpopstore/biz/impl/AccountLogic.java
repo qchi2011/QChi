@@ -7,7 +7,7 @@ package com.goodskpopstore.biz.impl;
 import com.goodskpopstore.biz.IGenericLogic;
 import com.goodskpopstore.dal.impl.AccountDAO;
 import com.goodskpopstore.entity.Account;
-import constant.CommonConst;
+import com.goodskpopstore.constant.CommonConst;
 import java.util.List;
 
 /**

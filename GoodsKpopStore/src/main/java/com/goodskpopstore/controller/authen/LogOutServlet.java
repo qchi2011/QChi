@@ -4,7 +4,7 @@
  */
 package com.goodskpopstore.controller.authen;
 
-import constant.CommonConst;
+import com.goodskpopstore.constant.CommonConst;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;

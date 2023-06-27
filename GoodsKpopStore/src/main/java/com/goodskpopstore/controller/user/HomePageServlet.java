@@ -9,7 +9,7 @@ import com.goodskpopstore.biz.impl.ProductLogic;
 import com.goodskpopstore.entity.Category;
 import com.goodskpopstore.entity.PageControl;
 import com.goodskpopstore.entity.Product;
-import constant.CommonConst;
+import com.goodskpopstore.constant.CommonConst;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;

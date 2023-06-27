@@ -9,7 +9,7 @@ import com.goodskpopstore.dal.IGenericDAO;
 import com.goodskpopstore.entity.Parameter;
 import com.goodskpopstore.entity.Product;
 import com.goodskpopstore.mapper.impl.ProductMapper;
-import constant.CommonConst;
+import com.goodskpopstore.constant.CommonConst;
 import java.sql.Types;
 import java.util.List;
 

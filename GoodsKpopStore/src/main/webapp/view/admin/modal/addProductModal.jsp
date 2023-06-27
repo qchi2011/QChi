@@ -20,6 +20,7 @@
     </head>
     <body>
         <!-- Modal -->
+<!--<div class="modal fade show" id="addProductModal" tabindex="-1" role="dialog" aria-labelledby="addProductModalLabel" style="display: block; padding-right: 17px;" aria-modal="true" >-->
         <div class="modal fade" id="addProductModal" tabindex="-1" role="dialog" aria-labelledby="addProductModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">

@@ -8,7 +8,7 @@ package com.goodskpopstore.controller.admin;
 import com.goodskpopstore.biz.impl.ProductLogic;
 //import com.goodskpopstore.constant.CommonConst;
 import com.goodskpopstore.entity.Product;
-import constant.CommonConst;
+import com.goodskpopstore.constant.CommonConst;
 import java.awt.print.Book;
 import java.io.File;
 import java.io.IOException;

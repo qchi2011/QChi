@@ -6,7 +6,7 @@ package com.goodskpopstore.controller.admin;
 
 import com.goodskpopstore.biz.impl.ProductLogic;
 import com.goodskpopstore.entity.Product;
-import constant.CommonConst;
+import com.goodskpopstore.constant.CommonConst;
 import java.io.File;
 import java.io.IOException;
 import javax.servlet.ServletException;
