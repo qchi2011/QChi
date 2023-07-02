@@ -11,8 +11,6 @@
 
     <head>
         <meta charset="UTF-8">
-        <meta name="description" content="Male_Fashion Template">
-        <meta name="keywords" content="Male_Fashion, unica, creative, html">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>QC SELECT | QC'S PICK!</title>
@@ -35,7 +33,7 @@
     </head>
 
     <body>
-       <!-- Breadcrumb Section Begin -->
+       <!-- Breadcrumb -->
         <section class="breadcrumb-option">
             <div class="container">
                 <div class="row">
@@ -43,7 +41,7 @@
                         <div class="breadcrumb__text">
                             <h4>Shopping Cart</h4>
                             <div class="breadcrumb__links">
-                                <a href="./index.jsp">Home</a>
+                                <a href="index.jsp">Home</a>
                                 <span>Shopping Cart</span>
                             </div>
                         </div>
@@ -51,9 +49,9 @@
                 </div>
             </div>
         </section>
-        <!-- Breadcrumb Section End -->
+        <!-- Breadcrumb -->
 
-        <!-- Shopping Cart Section Begin -->
+        <!-- Shopping Cart -->
         <section class="shopping-cart spad">
             <div class="container">
                 <div class="row">
@@ -72,11 +70,11 @@
                                     <tr>
                                         <td class="product__cart__item">
                                             <div class="product__cart__item__pic">
-                                                <img src="img/shopping-cart/cart-1.jpg" alt="">
+                                                <img src="https://cafe24img.poxo.com/ygnext/web/product/tiny/202305/011d1800b45ab66926df294668259bf3.png" alt="">
                                             </div>
                                             <div class="product__cart__item__text">
-                                                <h6>T-shirt Contrast Pocket</h6>
-                                                <h5>$98.49</h5>
+                                                <h6>BLACKPINK THE GAME COUPON CARD</h6>
+                                                <h5>21.5$</h5>
                                             </div>
                                         </td>
                                         <td class="quantity__item">
@@ -185,12 +183,12 @@
                 </div>
             </div>
         </section>
-        <!-- Shopping Cart Section End -->
-
+        <!-- Shopping Cart -->
+        
+        <!--Footer-->
         <jsp:include page="../../common/homepage/footer.jsp"></jsp:include>
 
-
-        <!-- Js Plugins -->
+        <!-- Js -->
         <script src="${pageContext.request.contextPath}/js/jquery-3.3.1.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/jquery.nice-select.min.js"></script>
