@@ -364,6 +364,7 @@ ol {
 }
 
 .header__top__links a {
+	color: #ffffff;
 	font-size: 13px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
@@ -774,7 +775,7 @@ ol {
 -----------------------*/
 
 .categories {
-	background: #f3f2ee;
+	background: #e4939375;
 	overflow: hidden;
 	padding-top: 150px;
 	padding-bottom: 125px;
@@ -1532,7 +1533,7 @@ ol {
 
 .product__details__pic {
 	text-align: center;
-	background: #f3f2ee;
+	background: #e4939375;
 	padding: 40px 0 60px;
 	margin-bottom: 100px;
 }
@@ -2083,7 +2084,7 @@ ol {
 -----------------------*/
 
 .breadcrumb-option {
-	background: #f3f2ee;
+	background: #e4939375;
 	padding: 40px 0;
 }
 
@@ -2174,7 +2175,7 @@ ol {
 -----------------------*/
 
 .testimonial {
-	background: #f3f2ee;
+	background: #e4939375;
 }
 
 .testimonial__text {
@@ -2418,10 +2419,11 @@ ol {
 	color: #111111;
 	height: 40px;
 	width: 40px;
-	background: #f3f2ee;
+	background: #e4939375;
 	border-radius: 50%;
 	line-height: 40px;
 	text-align: center;
+        cursor: pointer;
 }
 
 .continue__btn.update__btn {
@@ -2509,7 +2511,7 @@ ol {
 }
 
 .cart__total {
-	background: #f3f2ee;
+	background: #e4939375;
 	padding: 35px 40px 40px;
 }
 
@@ -2674,7 +2676,7 @@ ol {
 }
 
 .checkout__order {
-	background: #f3f2ee;
+	background: #e4939375;
 	padding: 30px;
 }
 
@@ -2950,7 +2952,7 @@ ol {
 -----------------------*/
 
 .blog-hero {
-	background: #f3f2ee;
+	background: #e4939375;
 	padding-top: 125px;
 	padding-bottom: 190px;
 }
@@ -3068,7 +3070,7 @@ ol {
 }
 
 .blog__details__quote {
-	background: #f3f2ee;
+	background: #e4939375;
 	padding: 50px 40px 35px;
 	border-radius: 5px;
 	position: relative;

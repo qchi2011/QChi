@@ -22,21 +22,11 @@
               rel="stylesheet">
 
         <!-- Css Styles -->
-        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-        <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-        <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-        <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-        <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-        <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-        <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
     </head>
 
     <body>
-        <!-- Page Preloder -->
-        <div id="preloder">
-            <div class="loader"></div>
-        </div>
 
         <!-- Offcanvas Menu Begin -->
         <div class="offcanvas-menu-overlay"></div>
@@ -623,16 +613,16 @@
         <!-- Search End -->
 
         <!-- Js Plugins -->
-        <script src="js/jquery-3.3.1.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/jquery.nice-select.min.js"></script>
-        <script src="js/jquery.nicescroll.min.js"></script>
-        <script src="js/jquery.magnific-popup.min.js"></script>
-        <script src="js/jquery.countdown.min.js"></script>
-        <script src="js/jquery.slicknav.js"></script>
-        <script src="js/mixitup.min.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/main.js"></script>
+        <script src="${pageContext.request.contextPath}/js/jquery-3.3.1.min.js"></script>
+        <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+        <script src="${pageContext.request.contextPath}/js/jquery.nice-select.min.js"></script>
+        <script src="${pageContext.request.contextPath}/js/jquery.nicescroll.min.js"></script>
+        <script src="${pageContext.request.contextPath}/js/jquery.magnific-popup.min.js"></script>
+        <script src="${pageContext.request.contextPath}/js/jquery.countdown.min.js"></script>
+        <script src="${pageContext.request.contextPath}/js/jquery.slicknav.js"></script>
+        <script src="${pageContext.request.contextPath}/js/mixitup.min.js"></script>
+        <script src="${pageContext.request.contextPath}/js/owl.carousel.min.js"></script>
+        <script src="${pageContext.request.contextPath}/js/main.js"></script>
     </body>
 
 </html>
