@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/app.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/web.css">
     </head>
     <body>
         <nav class="headerNav_section">

@@ -33,11 +33,6 @@ a:hover {
 .headerNav_section .logo span {
     color: var(--primaryColor);
 }
-.feature_wrapper a{
-    color: var(--secondColor);
-    text-decoration: none;
-    background-color: transparent;
-}
 .headerNav_section .feature_wrapper {
     font-size: 1.5vw;
     letter-spacing: 1rem;
