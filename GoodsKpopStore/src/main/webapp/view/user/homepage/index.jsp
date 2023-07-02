@@ -89,7 +89,7 @@
 
         <!-- Category -->
         <jsp:include page="../../common/homepage/category.jsp" ></jsp:include> 
-        <!-- Hot Section -->
+            <!-- Hot Section -->
             <div class="hot_section">
                 <h2>WHAT'S HOT</h2>
                 <div class="hot_list_wrapper">
@@ -117,20 +117,59 @@
                 </a>
             </div>
         </div>
+        <section class="banner spad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 offset-lg-4">
+                        <div class="banner__item">
+                            <div class="banner__item__pic">
+                                <img src="img/banner/banner-1.jpg" alt="">
+                            </div>
+                            <div class="banner__item__text">
+                                <h2>Clothing Collections 2030</h2>
+                                <a href="./shop.jsp">Shop now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="banner__item banner__item--middle">
+                            <div class="banner__item__pic">
+                                <img src="img/banner/banner-2.jpg" alt="">
+                            </div>
+                            <div class="banner__item__text">
+                                <h2>Accessories</h2>
+                                <a href="./shop.jsp">Shop now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="banner__item banner__item--last">
+                            <div class="banner__item__pic">
+                                <img src="img/banner/banner-3.jpg" alt="">
+                            </div>
+                            <div class="banner__item__text">
+                                <h2>Shoes Spring 2030</h2>
+                                <a href="./shop.jsp">Shop now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- Product -->
         <!--<div id="content" class="row">-->
-            <%--<jsp:include page="../../common/category2.jsp" ></jsp:include>--%>
-            <h2 style="text-align: center;">LET'S PICK</h2>
-            <jsp:include page="../../common/homepage/product.jsp" ></jsp:include>  
-            </div>
-            <!--Pagination-->
+        <%--<jsp:include page="../../common/category2.jsp" ></jsp:include>--%>
+        <h2 style="text-align: center;">LET'S PICK</h2>
+        <jsp:include page="../../common/homepage/product.jsp" ></jsp:include>  
+        </div>
+        <!--Pagination-->
     <jsp:include page="../../common/homepage/pagination.jsp"></jsp:include>
-            <!-- Footer -->
+        <!-- Footer -->
     <jsp:include page="../../common/homepage/footer.jsp"></jsp:include>
 
 
-    </body>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </html>

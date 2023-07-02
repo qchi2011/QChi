@@ -20,7 +20,7 @@ a:hover {
 
 .headerNav_section {
     display: flex;
-    padding: 2rem 5rem;
+    padding: 1rem 5rem;
     align-items: center;
     justify-content: space-between;
     font-family: "Raleway", sans-serif;
