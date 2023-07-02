@@ -45,13 +45,44 @@
                                 </div>
                             </div>
                         </div>
-                            <div class="col-lg-6 col-md-9" style="justify-content: center">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
+                                            <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/thumb-1.png">
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
+                                            <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/thumb-2.png">
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
+                                            <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/thumb-3.png">
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">
+                                            <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/thumb-4.png">
+                                                <i class="fa fa-play"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6 col-md-9">
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="tabs-1" role="tabpanel">
                                         <div class="product__details__pic__item">
                                             <img src="https://cafe24img.poxo.com/ygnext/web/product/big/202205/5ba631ffe643bad49ad04c8a3f7dbc4a.jpg" alt="">
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
