@@ -16,9 +16,11 @@
         <title>QC SELECT | QC'S PICK!</title>
 
         <!-- Google Font -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
-              rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"rel="stylesheet">
         <script src="https://kit.fontawesome.com/65d7426ab6.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@500;600&family=Dela+Gothic+One&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
 
         <!-- Css Styles -->
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/web.css">
@@ -33,7 +35,7 @@
     </head>
 
     <body>
-       <!-- Breadcrumb -->
+        <!-- Breadcrumb -->
         <section class="breadcrumb-option">
             <div class="container">
                 <div class="row">
@@ -184,12 +186,12 @@
             </div>
         </section>
         <!-- Shopping Cart -->
-        
+
         <!--Footer-->
         <jsp:include page="../../common/homepage/footer.jsp"></jsp:include>
 
-        <!-- Js -->
-        <script src="${pageContext.request.contextPath}/js/jquery-3.3.1.min.js"></script>
+            <!-- Js -->
+            <script src="${pageContext.request.contextPath}/js/jquery-3.3.1.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/jquery.nice-select.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/jquery.nicescroll.min.js"></script>
