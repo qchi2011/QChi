@@ -21,10 +21,15 @@
         <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@500;600&family=Dela+Gothic+One&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
-
         <!-- Css Styles -->
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/web.css" type="text/css">
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/web.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/font-awesome.min.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/elegant-icons.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/magnific-popup.css" type="text/css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nice-select.css" type="text/css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/owl.carousel.min.css" type="text/css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/slicknav.min.css" type="text/css">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
     </head>
 
@@ -32,66 +37,21 @@
         <!--Header-->
         <jsp:include page="../../common/homepage/header.jsp"></jsp:include>
 
-        <!-- Shop Details Section Begin -->
             <section class="shop-details">
                 <div class="product__details__pic">
                     <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="product__details__breadcrumb">
-                                    <a href="./index.jsp">Home</a>
-                                    <a href="./shop.jsp">Shop</a>
-                                    <span>Product Details</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-3 col-md-3">
-                                <ul class="nav nav-tabs" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
-                                            <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/thumb-1.png">
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
-                                            <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/thumb-2.png">
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
-                                            <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/thumb-3.png">
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">
-                                            <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/thumb-4.png">
-                                                <i class="fa fa-play"></i>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-6 col-md-9">
+                        <div class="d-flex flex-row">
+                            <div class="col-md-6">
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="tabs-1" role="tabpanel">
                                         <div class="product__details__pic__item">
-                                            <img src="https://cafe24img.poxo.com/ygnext/web/product/big/202205/5ba631ffe643bad49ad04c8a3f7dbc4a.jpg" alt="">
+                                            <img src="https://cafe24img.poxo.com/ygnext/web/product/big/202205/5ba631ffe643bad49ad04c8a3f7dbc4a.jpg"
+                                                 alt="">
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="product__details__content">
-                    <div class="container">
-                        <div class="row d-flex justify-content-center">
-                            <div class="col-lg-8">
+                            <div class="col-md-6">
                                 <div class="product__details__text">
                                     <h4>Hooded thermal anorak</h4>
                                     <div class="rating">
@@ -103,8 +63,10 @@
                                         <span> - 5 Reviews</span>
                                     </div>
                                     <h3>$270.00 <span>70.00</span></h3>
-                                    <p>Coat with quilted lining and an adjustable hood. Featuring long sleeves with adjustable
-                                        cuff tabs, adjustable asymmetric hem with elastic side tabs and a front zip fastening
+                                    <p>Coat with quilted lining and an adjustable hood. Featuring long sleeves with
+                                        adjustable
+                                        cuff tabs, adjustable asymmetric hem with elastic side tabs and a front zip
+                                        fastening
                                         with placket.</p>
                                     <div class="product__details__option">
                                         <div class="product__details__option__size">
@@ -122,7 +84,7 @@
                                                 <input type="radio" id="sm">
                                             </label>
                                         </div>
-                                        
+
                                     </div>
                                     <div class="product__details__cart__option">
                                         <div class="quantity">
@@ -136,18 +98,17 @@
                                         <a href="#"><i class="fa fa-heart"></i> add to wishlist</a>
                                         <a href="#"><i class="fa fa-exchange"></i> Add To Compare</a>
                                     </div>
-                                    <div class="product__details__last__option">
-                                        <h5><span>Guaranteed Safe Checkout</span></h5>
-                                        <img src="img/shop-details/details-payment.png" alt="">
-                                        <ul>
-                                            <li><span>SKU:</span> 3812912</li>
-                                            <li><span>Categories:</span> Clothes</li>
-                                            <li><span>Tag:</span> Clothes, Skin, Body</li>
-                                        </ul>
-                                    </div>
                                 </div>
+
                             </div>
+
+
                         </div>
+                    </div>
+                </div>
+                <div class="product__details__content">
+                    <div class="container">
+
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="product__details__tab">
@@ -189,10 +150,10 @@
                                                         make the suit look cheap. The texture of velvet is luxurious and
                                                         breathable. Velvet is a great choice for dinner party jacket and can be
                                                         worn all year round.</p>
-                                                
+
+                                                </div>
                                             </div>
-                                        </div>
-                                        
+
                                         </div>
                                     </div>
                                 </div>
@@ -201,16 +162,15 @@
                     </div>
                 </div>
             </section>
-            <!-- Shop Details Section End -->
 
-            
+
 
             <!--Footer-->
         <jsp:include page="../../common/homepage/footer.jsp"></jsp:include>
 
 
             <!-- Js Plugins -->
-            <script src="${pageContext.request.contextPath}/js/jquery-3.3.1.min.js"></script>
+        <script src="${pageContext.request.contextPath}/js/jquery-3.3.1.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/jquery.nice-select.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/jquery.nicescroll.min.js"></script>

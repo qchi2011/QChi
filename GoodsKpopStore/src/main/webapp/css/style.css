@@ -1532,12 +1532,14 @@ ol {
 /*---------------------
   Shop
 -----------------------*/
-
+/*.product__details__pic img{
+    margin-left: 330px;
+}*/
 .product__details__pic {
     text-align: center;
     background: #e4939375;
     padding: 40px 0 60px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 .product__details__pic .nav-tabs {
@@ -1639,6 +1641,7 @@ ol {
 
 .product__details__text {
     text-align: center;
+    margin-top: 50px;
 }
 
 .product__details__text h4 {
@@ -1792,7 +1795,7 @@ ol {
 }
 
 .product__details__cart__option .quantity .pro-qty {
-    width: 100px;
+    width: 74px;
     height: 40px;
     border: 1px solid #e5e5e5;
     position: relative;
@@ -1885,9 +1888,6 @@ ol {
     color: #b7b7b7;
 }
 
-.product__details__tab {
-    padding-top: 60px;
-}
 
 .product__details__tab .nav-tabs {
     border-bottom: 1px solid #e5e5e5;
