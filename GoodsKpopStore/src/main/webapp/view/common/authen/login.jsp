@@ -51,7 +51,7 @@
                         </div>
                         <div id="err" style="color:red ;font-size:12px; margin-top: 10px" >${err}</div>                        
                         <button type="submit">Sign In</button>
-                        <a href="">Forgot your password?</a>
+                        <a href="#">Forgot your password?</a>
                         <div class="social_container" style="margin-top: 5px">
                             <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
                         </div>
@@ -72,7 +72,7 @@
                             <label class="fa-solid fa-envelope"></label>
                             <input type="email" placeholder="Email" name="email" required=""/>
                         </div>
-                        <div class="input_item">
+<!--                        <div class="input_item">
                             <label class="fa-solid fa-address-card"></label>
                             <input type="text" placeholder="Fullname" name="fullname" required=""/>
                         </div>
@@ -83,7 +83,7 @@
                         <div class="input_item">
                             <label class="fa-solid fa-home"></label>
                             <input type="text" placeholder="Address" name="address" required=""/>
-                        </div>
+                        </div>-->
                         <div id="err" style="color:red ;font-size:12px" >${error2}</div>
                         <button type="submit">Sign Up</button>
 
