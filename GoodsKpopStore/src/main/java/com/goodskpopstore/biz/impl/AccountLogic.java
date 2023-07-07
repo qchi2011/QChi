@@ -27,7 +27,15 @@ public class AccountLogic implements IGenericLogic<Account>{
 
     @Override
     public int insertToDb(Account t) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        //check username exist
+        if (dao.findByUsername(t) != null) {
+            throw new IllegalArgumentException("Username already exists!");
+        }
+        //check email exist
+        if (dao.findByEmail(t) != null) {
+            throw new IllegalArgumentException("Email already exists!");
+        }
+        return dao.insertToDb(t);    
     }
 
     @Override

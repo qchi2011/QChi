@@ -65,11 +65,11 @@ public class DBContext<T> {
             }
             return list;
         } catch (SQLException e) {
-            System.out.println("PHAM KHAC VINH: Loi o ham query");
+            System.out.println(" Loi o ham query");
 
             throw new RuntimeException(e);
         } catch (ClassNotFoundException ex) {
-            System.out.println("PHAM KHAC VINH: Loi o ham query");
+            System.out.println(" Loi o ham query");
 
             Logger.getLogger(DBContext.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
@@ -84,7 +84,7 @@ public class DBContext<T> {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                System.out.println("PHAM KHAC VINH: Loi o ham query");
+                System.out.println(" Loi o ham query");
                 throw new RuntimeException(e);
             }
         }
@@ -217,7 +217,7 @@ public class DBContext<T> {
                     resultSet.close();
                 }
             } catch (SQLException e) {
-                System.out.println("PHAM KHAC VINH: Loi o ham query");
+                System.out.println(" Loi o ham query");
                 throw new RuntimeException(e);
             }
         }

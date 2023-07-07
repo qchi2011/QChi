@@ -30,7 +30,24 @@ public class AccountDAO extends DBContext<Account> implements IGenericDAO<Accoun
 
     @Override
     public int insertToDb(Account t) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "INSERT INTO [Account]\n"
+                + "           ([username]\n"
+                + "           ,[password]\n"
+                + "           ,[email]\n"
+                + "           ,[address]\n"
+                + "           ,[roleid])\n"
+                + "     VALUES\n"
+                + "           (?\n"
+                + "           ,?\n"
+                + "           ,?\n"
+                + "           ,?\n"
+                + "           ,?)";
+        return insert(sql,new Parameter(t.getUsername(), Types.NVARCHAR),
+                new Parameter(t.getPassword(), Types.NVARCHAR),
+                new Parameter(t.getEmail(), Types.NVARCHAR),
+                new Parameter(t.getAddress(), Types.NVARCHAR),
+                new Parameter(t.getRoleid(), Types.INTEGER)
+        );
     }
 
     @Override
@@ -51,6 +68,19 @@ public class AccountDAO extends DBContext<Account> implements IGenericDAO<Accoun
                 new Parameter(account.getPassword(), Types.NVARCHAR)
         );
         return list.isEmpty() ? null : list.get(0);
+    }
+
+    public Account findByUsername(Account t) {
+        String sql = "select * from Account where username = ?";
+        List<Account> list = query(sql, new AccountMapper(), new Parameter(t.getUsername(), Types.NVARCHAR));
+        return list.isEmpty() ? null : list.get(0);
+    }
+
+    public Account findByEmail(Account t) {
+        String sql = "select * from Account where email = ?";
+        List<Account> list = query(sql, new AccountMapper(), new Parameter(t.getEmail(), Types.NVARCHAR));
+        return list.isEmpty() ? null : list.get(0);
+
     }
 
 }

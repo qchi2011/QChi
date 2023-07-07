@@ -84,7 +84,7 @@
                             <label class="fa-solid fa-home"></label>
                             <input type="text" placeholder="Address" name="address" required=""/>
                         </div>-->
-                        <div id="err" style="color:red ;font-size:12px" >${error2}</div>
+                        <div id="err" style="color:red ;font-size:12px" >${err2}</div>
                         <button type="submit">Sign Up</button>
 
 
