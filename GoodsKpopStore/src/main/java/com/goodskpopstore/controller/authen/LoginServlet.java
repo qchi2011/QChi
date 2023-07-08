@@ -59,10 +59,10 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute(CommonConst.SESSION_ACCOUNT, account);
             //go to page corresponding to role
             switch (account.getRoleid()) {
-                case CommonConst.ROLE_ADMIN:
+                case CommonConst.ROLE_ADMIN: //0
                     response.sendRedirect("admin/dashboard");
                     break;
-                case CommonConst.ROLE_USER:
+                case CommonConst.ROLE_USER: //1
                     response.sendRedirect("home");
                     break;
             }

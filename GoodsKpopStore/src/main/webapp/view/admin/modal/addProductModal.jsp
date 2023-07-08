@@ -139,7 +139,6 @@
                     previewImage.src = e.target.result;
                     previewImage.style.display = "block";
                 }
-
                 reader.readAsDataURL(file);
             }
 

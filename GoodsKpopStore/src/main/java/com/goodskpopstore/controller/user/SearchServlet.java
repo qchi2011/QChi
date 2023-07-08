@@ -9,7 +9,6 @@ import com.goodskpopstore.entity.PageControl;
 import com.goodskpopstore.entity.Product;
 import com.goodskpopstore.constant.CommonConst;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -41,7 +40,7 @@ public class SearchServlet extends HttpServlet {
         //get list search by keyword
         List<Product> listByCurrentPage = logic.findProductByPage(page, keyword);
         //create instance
-        PageControl pageControl = new PageControl("search?keyword=" + keyword+"&",CommonConst.PRODUCT_RECORD_PER_PAGE, totalPage, totalRecord, page);
+        PageControl pageControl = new PageControl("search?keyword=" + keyword+ "&",CommonConst.PRODUCT_RECORD_PER_PAGE, totalPage, totalRecord, page);
         //set atttibute
         session.setAttribute("listProduct", listByCurrentPage);
         request.setAttribute("pageControl", pageControl);

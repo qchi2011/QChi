@@ -51,9 +51,9 @@ public class AccountLogic implements IGenericLogic<Account>{
     public Account findAccount(Account account, String optionFind) {
         Account accountFound = null;
         switch(optionFind){
-            case CommonConst.FIND_ACCOUNT_BY_EMAIL:
-                
-                break;
+//            case CommonConst.FIND_ACCOUNT_BY_EMAIL:
+//                
+//                break;
             case CommonConst.FIND_ACCOUNT_BY_USERNAME_PASSWORD:
                 accountFound = dao.findByUsernamePassword(account);
                 break;

@@ -94,7 +94,7 @@
 
                 //xoá thông báo lỗi hiện tại
                 $('.error').html('');
-
+                //tbao loi
                 if (name === '') {
                     $('#nameEditError').html('Name of product must not be empty');
                 }
@@ -138,7 +138,6 @@
 
             function editProductModal(id, name, description, price, quantity, image, categoryId) {
                 $('#idEditInput').val(id);
-                console.log(id);
                 $('#nameEditInput').val(name);
                 $('#priceEditInput').val(price);
                 $('#quantityEditInput').val(quantity);

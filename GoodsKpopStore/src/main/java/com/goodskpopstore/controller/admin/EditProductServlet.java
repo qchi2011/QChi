@@ -52,15 +52,18 @@ public class EditProductServlet extends HttpServlet {
         Part part = request.getPart("image");
         
         try {
+            //tao duong dan de add image
             File dir = new File(request.getServletContext().getRealPath(
                     CommonConst.SLASH + CommonConst.FOLDER_PRODUCT_IMAGES));
+            //neu chua ton tai duong dan
             if (!dir.exists()) {
                 //tao ra duong dan do
                 dir.mkdirs();
             }
-            
+            //lay ra ten cua file image
             File image = new File(dir, part.getSubmittedFileName());
             part.write(image.getAbsolutePath());
+            //set link image
             product.setImage("/GoodsKpopStore/" + CommonConst.FOLDER_PRODUCT_IMAGES + CommonConst.SLASH + image.getName());
         } catch (Exception e) {
             e.printStackTrace();

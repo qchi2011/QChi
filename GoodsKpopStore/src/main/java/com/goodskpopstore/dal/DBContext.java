@@ -1,7 +1,3 @@
-/*				
- * Copyright (C) FPT University , Ltd. 2023	
- * 07/02/2023 FPT VinhPK2 DEBIT_BOOK_ITER1
- */
 package com.goodskpopstore.dal;
 
 import com.goodskpopstore.entity.Parameter;
@@ -9,9 +5,7 @@ import com.goodskpopstore.mapper.IGenericMapper;
 import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -105,10 +99,12 @@ public class DBContext<T> {
             Logger.getLogger(DBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
+            //khong thao tac truc tiep voi dtb
             connection.setAutoCommit(false);
             statement = connection.prepareStatement(sql);
             setParameter(parameter);
             statement.executeUpdate();
+            //query finish k co loi,thi commit
             connection.commit();
         } catch (SQLException e) {
             try {
@@ -156,6 +152,7 @@ public class DBContext<T> {
             setParameter(parameter);
 
             statement.executeUpdate();
+            //lay ve id autoincrement trong dtb
             resultSet = statement.getGeneratedKeys();
             if (resultSet.next()) {
                 id = resultSet.getInt(1);
@@ -163,7 +160,7 @@ public class DBContext<T> {
             connection.commit();
         } catch (SQLException e) {
             try {
-                System.out.println("PHAM KHAC VINH (LOI INSERT): " + e.getMessage());
+                System.out.println("(LOI INSERT): " + e.getMessage());
                 e.printStackTrace();
                 connection.rollback();
             } catch (SQLException ex) {

@@ -7,7 +7,6 @@ package com.goodskpopstore.biz.impl;
 import com.goodskpopstore.biz.IGenericLogic;
 import com.goodskpopstore.dal.impl.ProductDAO;
 import com.goodskpopstore.entity.Product;
-import com.sun.corba.se.impl.oa.poa.AOMEntry;
 import com.goodskpopstore.constant.CommonConst;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;

@@ -31,18 +31,15 @@ public class HomePageServlet extends HttpServlet {
         CategoryLogic categoryLogic = new CategoryLogic();
         //get sesion
         HttpSession session = request.getSession();
-        //get total product in dtb
-        int totalRecord = productLogic.findTotalRecord("");
-        
+        //get total product in dtb, keyword = null
+        int totalRecord = productLogic.findTotalRecord("");        
         //get total page
         int totalPage = productLogic.findTotalPage(totalRecord);
         //get current page
-        int page = productLogic.findCurrentPage(request);
-        
+        int page = productLogic.findCurrentPage(request);        
         if( page >= totalPage){
             page = totalPage;
-        }
-        
+        }        
         //get list product by currentpage
         List<Product> listByCurrentPage = productLogic.findProductByPage(page, "");
 

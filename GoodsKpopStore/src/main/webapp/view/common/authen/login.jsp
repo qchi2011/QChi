@@ -72,18 +72,18 @@
                             <label class="fa-solid fa-envelope"></label>
                             <input type="email" placeholder="Email" name="email" required=""/>
                         </div>
-<!--                        <div class="input_item">
-                            <label class="fa-solid fa-address-card"></label>
-                            <input type="text" placeholder="Fullname" name="fullname" required=""/>
-                        </div>
-                        <div class="input_item">
-                            <label class="fa-solid fa-phone"></label>
-                            <input type="number" placeholder="Phone" name="phone" required=""/>
-                        </div>
-                        <div class="input_item">
-                            <label class="fa-solid fa-home"></label>
-                            <input type="text" placeholder="Address" name="address" required=""/>
-                        </div>-->
+                        <!--                        <div class="input_item">
+                                                    <label class="fa-solid fa-address-card"></label>
+                                                    <input type="text" placeholder="Fullname" name="fullname" required=""/>
+                                                </div>
+                                                <div class="input_item">
+                                                    <label class="fa-solid fa-phone"></label>
+                                                    <input type="number" placeholder="Phone" name="phone" required=""/>
+                                                </div>
+                                                <div class="input_item">
+                                                    <label class="fa-solid fa-home"></label>
+                                                    <input type="text" placeholder="Address" name="address" required=""/>
+                                                </div>-->
                         <div id="err" style="color:red ;font-size:12px" >${err2}</div>
                         <button type="submit">Sign Up</button>
 
@@ -114,14 +114,26 @@
         const auth_wrapper = document.getElementById('auth_wrapper');
 
         signUpButton.addEventListener('click', () => {
-            if (document.getElementById("err").value !== "") {
-                document.getElementById("err").value = "";
-            }
+//            if (document.getElementById("err").value !== "") {
+////                document.getElementById("err").value = "";
+//                auth_wrapper.classList.remove("overlay_right_active");
+//            }
             auth_wrapper.classList.add("overlay_right_active");
         });
         signInButton.addEventListener('click', () => {
             auth_wrapper.classList.remove("overlay_right_active");
         });
+
+//        function error(){
+//        $.ajax({
+//                url: "/GoodsKpopStore/register",
+//                type: "post",
+//                success: function(error2){
+//                var err2 = document.getElementById("err");
+//                        err2
+//                }
+//        }
     </script>
     <script src="https://kit.fontawesome.com/756da913d7.js" crossorigin="anonymous"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>-->
 </html>
