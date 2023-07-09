@@ -29,7 +29,9 @@ public class ProductDAO extends DBContext<Product> implements IGenericDAO<Produc
 
     @Override
     public Product findOneById(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "select * from Product where id = ?";
+        List<Product> list = query(sql, new ProductMapper(), new Parameter(id, Types.INTEGER));
+        return list.isEmpty() ? null : list.get(0);
     }
 
     @Override

@@ -89,4 +89,8 @@ public class ProductLogic implements IGenericLogic<Product> {
         dao.delete(t);
     }
 
+    public Product findProductById(int id) {
+        return dao.findOneById(id);
+    }
+
 }

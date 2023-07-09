@@ -14,7 +14,7 @@
     </head>
     <body>
         <nav class="headerNav_section">
-            <a href="home" class="logo"><span>QC</span>Select</a>
+            <a href="${pageContext.request.contextPath}/home" class="logo"><span>QC</span>Select</a>
             <div class="feature_wrapper">
                 <input type="checkbox" hidden id="en_search">
                 <form action="search" method="get">

@@ -35,23 +35,8 @@
 
     <body>
 
-        <!-- Breadcrumb -->
-        <section class="breadcrumb-option">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="breadcrumb__text">
-                            <h4>Shopping Cart</h4>
-                            <div class="breadcrumb__links">
-                                <a href="home">Home</a>
-                                <span>Shopping Cart</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Breadcrumb -->
+        <!--Header-->
+        <jsp:include page="../../common/homepage/header.jsp"></jsp:include>
 
         <!-- Shopping Cart -->
         <section class="shopping-cart spad">

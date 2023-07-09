@@ -35,11 +35,11 @@ public class RegisterServlet extends HttpServlet {
         String email = request.getParameter("email");
 
         //create instance account
-              Account account = Account.builder().username(username).password(password).email(email).roleid(CommonConst.ROLE_USER).build();
-//        accountLogic.insertToDb(account);
+        Account account = Account.builder().username(username).password(password).email(email).roleid(CommonConst.ROLE_USER).build();
+        //accountLogic.insertToDb(account);
         try {
-           accountLogic.insertToDb(account);
-
+            accountLogic.insertToDb(account);
+            request.getRequestDispatcher("view/common/authen/success.jsp").forward(request, response);
             //username or email not exist
         } catch (IllegalArgumentException e) {
             //set error
