@@ -48,6 +48,14 @@
         <servlet-name>DetailServlet</servlet-name>
         <servlet-class>com.goodskpopstore.controller.user.DetailServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DashboardServlet</servlet-name>
+        <servlet-class>com.goodskpopstore.controller.user.DashboardServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>com.goodskpopstore.controller.user.CartServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomePageServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -91,6 +99,14 @@
     <servlet-mapping>
         <servlet-name>DetailServlet</servlet-name>
         <url-pattern>/detail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DashboardServlet</servlet-name>
+        <url-pattern>/dashboard</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/cart</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

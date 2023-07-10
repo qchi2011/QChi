@@ -80,14 +80,23 @@
                                         </div>
                                     </c:if>
                                 </div>
-                                <div class="product__details__cart__option">
-                                    <div class="quantity">
-                                        <div class="pro-qty">
-                                            <input type="text" value="1">
-                                        </div>
+                                <form action="cart?action=add-product" method="POST">
+                                    <div style="display:none">
+                                        <input name="id" value="${product.id}"/>
                                     </div>
-                                    <a href="#" class="primary-btn">add to cart</a>
-                                </div>
+
+                                    <div class="product__details__cart__option">
+                                        <div class="quantity" >
+                                            <div class="pro-qty">
+                                                <input type="text" value="1" name="quantity">
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="primary-btn">
+                                            add to cart
+                                        </button>
+                                        
+                                    </div>
+                                </form>
                             </div>
 
                         </div>
