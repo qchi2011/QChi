@@ -5,6 +5,7 @@
 package com.goodskpopstore.controller.user;
 
 import com.goodskpopstore.biz.impl.AccountLogic;
+import com.goodskpopstore.dal.impl.AccountDAO;
 import com.goodskpopstore.entity.Account;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -38,6 +39,7 @@ public class ProfileServlet extends HttpServlet {
         String address = request.getParameter("address");
         String fullname = request.getParameter("fullname");
         String phone = request.getParameter("phone");
+        
         //update
         try {
             logic.updateProfile(username, fullname, phone, address);
@@ -52,4 +54,5 @@ public class ProfileServlet extends HttpServlet {
         session.setAttribute("account", account);
     }
 
+   
 }

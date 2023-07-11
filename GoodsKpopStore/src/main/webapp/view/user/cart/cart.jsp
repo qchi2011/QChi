@@ -59,8 +59,7 @@
                                     </thead>
                                     <tbody>
                                     <c:forEach items="${sessionScope.cart}" var="orderDetails" varStatus="status">
-
-                                        <fmt:setLocale value = "en_US"/>
+                                    <fmt:setLocale value = "en_US"/>
                                     <th scope="row">${status.index + 1}</th>
                                     <!--Image-->
                                     <td class="product__cart__item">
@@ -130,7 +129,7 @@
                             <ul>
                                 <li>Total <span id="totalMoney">$</span></li>
                             </ul>
-                            <a href="./checkout.jsp" class="primary-btn">Proceed to checkout</a>
+                            <a href="${pageContext.request.contextPath}/checkout" class="primary-btn">Proceed to checkout</a>
                         </div>
                     </div>
                 </div>

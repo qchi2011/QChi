@@ -6,6 +6,8 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -41,95 +43,104 @@
             <section class="checkout spad">
                 <div class="container">
                     <div class="checkout__form">
-                        <form action="#">
+                        <form action="checkout" method="post">
                             <div class="row">
-                                <div class="col-lg-8 col-md-6">  
+                                <div class="col-lg-7 col-md-6">  
                                     <h6 class="checkout__title">Billing Details</h6>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="checkout__input">
                                                 <p>Name<span>*</span></p>
-                                                <input type="text">
+                                                <input type="text" value="${sessionScope.account.fullname}">
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="checkout__input">
                                         <p>Address<span>*</span></p>
-                                        <input type="text" placeholder="Departerment, Street,..." class="checkout__input__add">
+                                        <input type="text" class="checkout__input__add" value="${sessionScope.account.address}">
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="checkout__input">
                                                 <p>Phone<span>*</span></p>
-                                                <input type="text">
+                                                <input type="text" value="${sessionScope.account.phone}">
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="checkout__input">
                                                 <p>Email<span>*</span></p>
-                                                <input type="text">
+                                                <input type="text" value="${sessionScope.account.email}">
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="checkout__input">
-                                        <p>Account Password<span>*</span></p>
-                                        <input type="text">
-                                    </div>
-                                    <div class="checkout__input__checkbox">
-                                        <label for="diff-acc">
-                                            Note about your order, e.g, special note for delivery
-                                            <input type="checkbox" id="diff-acc">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </div>
-                                    <div class="checkout__input">
-                                        <p>Order notes<span>*</span></p>
-                                        <input type="text"
-                                               placeholder="Notes about your order, e.g. special notes for delivery.">
+                                        <p>Order notes</p>
+                                        <input type="text" placeholder="Notes about your order, e.g. special notes for delivery." name="note">
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-6">
+                                <div class="col-lg-5 col-md-6">
                                     <div class="checkout__order">
-                                        <h4 class="order__title">Your order</h4>
-                                        <div class="checkout__order__products">Product <span>Total</span></div>
-                                        <ul class="checkout__total__products">
-                                            <li>01. Vanilla salted caramel <span>$ 300.0</span></li>
-                                            <li>02. German chocolate <span>$ 170.0</span></li>
-                                            <li>03. Sweet autumn <span>$ 170.0</span></li>
-                                            <li>04. Cluten free mini dozen <span>$ 110.0</span></li>
-                                        </ul>
-                                        <ul class="checkout__total__all">
-                                            <li>Subtotal <span>$750.99</span></li>
-                                            <li>Total <span>$750.99</span></li>
-                                        </ul>
+                                        <h4 class="order__title">Your order :</h4>
+                                        <table>
+                                            <thead class="checkout__order__products">
+                                                <tr>
+                                                    <th>No&nbsp;&nbsp;</th>
+                                                    <th>Name</th>
+                                                    <th>Price</th>
+                                                    <th>Quantity&nbsp;&nbsp;</th>
+                                                    <th>Amount</th>
 
-                                        <div class="checkout__input__checkbox">
-                                            <label for="payment">
-                                                Check Payment
-                                                <input type="checkbox" id="payment">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                        <div class="checkout__input__checkbox">
-                                            <label for="paypal">
-                                                Paypal
-                                                <input type="checkbox" id="paypal">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                        <button type="submit" class="site-btn">PLACE ORDER</button>
-                                    </div>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            <c:forEach items="${sessionScope.cart}" var="orderDetails" varStatus="status">
+                                            <fmt:setLocale value = "en_US"/>
+                                            <tr>
+                                                <th scope="row" >${status.index + 1}</th>
+                                                <!--Name-->
+                                                <td class="product__cart__item">
+                                                    <h6 class="product__cart__item__text">${orderDetails.value.product.name}</h6>
+                                                </td>  
+                                                <!--Price-->
+                                                <td class="product__cart__item__text" style="text-align: center">
+                                                    <h6>${String.format("%.2f", orderDetails.value.product.price)}$</h6>
+                                                </td>
+                                                <!--Quantity-->
+                                                <td class="product__cart__item__text" style="text-align: center">
+                                                    <h6>${orderDetails.value.quantity}</h6>
+                                                </td>
+
+                                                <!--Amount-->
+                                                <td id="amount-cell" class="cart__price" style="text-align: center">${String.format("%.2f", orderDetails.value.product.price * orderDetails.value.quantity)}$</td>
+
+                                            </tr>
+                                        </c:forEach>
+                                        </tbody>
+                                    </table>
+
+                                    <ul class="checkout__total__all">
+                                        <!--<li>Subtotal <span>$750.99</span></li>-->
+                                        <li>Total <span id="totalMoney"></span></li>
+                                    </ul>
+
+                                    <button type="submit" class="site-btn">
+                                        <a href="view/user/cart/success.jsp">
+                                            PLACE ORDER
+                                        </a>
+                                        
+                                    </button>
                                 </div>
                             </div>
-                        </form>
-                    </div>
-                </div>
-            </section>
-            <!-- Checkout Section End -->
+                        </div>
+                    </form>
 
-            <!-- Js Plugins -->
+                </div>
+            </div>
+        </section>
+        <!-- Checkout Section End -->
+
+        <!-- Js Plugins -->
         <script src="${pageContext.request.contextPath}/js/jquery-3.3.1.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/jquery.nice-select.min.js"></script>
@@ -141,5 +152,22 @@
         <script src="${pageContext.request.contextPath}/js/owl.carousel.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/main.js"></script>
     </body>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            calculateTotalMoney();
+        });
 
+        function calculateTotalMoney() {
+            var amountCells = document.querySelectorAll('#amount-cell');
+            var totalMoney = 0;
+
+            amountCells.forEach(function (cell) {
+                var amountValue = parseFloat(cell.innerText);
+                totalMoney += amountValue;
+            });
+
+            var totalMoneyElement = document.getElementById('totalMoney');
+            totalMoneyElement.innerText = totalMoney.toFixed(2) + "$";
+        }
+    </script>
 </html>

@@ -66,7 +66,7 @@ public class AccountLogic implements IGenericLogic<Account> {
 
     }
 
-    public void updateProfile(String username, String fullname, String phone,String address) {
+    public void updateProfile(String username, String fullname, String phone, String address) {
         String sql = "UPDATE [dbo].[Account]\n"
                 + "   SET \n"
                 + "      [fullname] = ?,\n"
@@ -79,6 +79,14 @@ public class AccountLogic implements IGenericLogic<Account> {
                 new Parameter(username, Types.NVARCHAR)
         );
     }
-
+//
+//    public void updatePassword(String username, String newPassword) {
+//        String sql = "UPDATE [dbo].[Account]\n"
+//                + "   SET \n"
+//                + "      [password] = ?\n"
+//                + " WHERE username = ?";
+//        dao.update(sql, new Parameter(newPassword, Types.NVARCHAR),
+//                new Parameter(username, Types.NVARCHAR));
+//    }
 
 }

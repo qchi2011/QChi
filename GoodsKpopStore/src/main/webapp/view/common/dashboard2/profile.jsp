@@ -74,17 +74,17 @@
 
                                             <div class="form-group">
                                                 <label class="form-label">Current password</label>
-                                                <input type="password" class="form-control">
+                                                <input type="password" class="form-control" name="oldPassword">
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="form-label">New password</label>
-                                                <input type="password" class="form-control">
+                                                <input type="password" class="form-control" name="newPassword">
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="form-label">Repeat new password</label>
-                                                <input type="password" class="form-control">
+                                                <input type="password" class="form-control" name="rePassword">
                                             </div>
 
                                         </div>

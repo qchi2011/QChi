@@ -4,6 +4,7 @@
  */
 package com.goodskpopstore.entity;
 
+import java.sql.Timestamp;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,13 +24,12 @@ import lombok.ToString;
 @NoArgsConstructor
 @Getter
 @Setter
-public class ItemCart {
-    private Product product;
-    private int quantity;
-    
-     public float getAmount() {
-        return product.getPrice() * quantity;
-    }
+
+public class Order {
+    private int id;
+    private float amount;
+    private String description;
+    private Timestamp createAt;
+    private int accountId;
 
 }
-

@@ -23,13 +23,11 @@ import lombok.ToString;
 @NoArgsConstructor
 @Getter
 @Setter
-public class ItemCart {
-    private Product product;
+
+public class OrderDetails {
+    private int id;
     private int quantity;
-    
-     public float getAmount() {
-        return product.getPrice() * quantity;
-    }
+    private int productId;
+    private int orderId;
 
 }
-
