@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.goodskpopstore.mapper.impl;
+
 import com.goodskpopstore.entity.Account;
 import com.goodskpopstore.mapper.IGenericMapper;
 import java.sql.ResultSet;
@@ -22,8 +23,10 @@ public class AccountMapper implements IGenericMapper<Account> {
             String email = resultSet.getString("email");
             String address = resultSet.getString("address");
             int roleid = resultSet.getInt("roleid");
+            String phone = resultSet.getString("phone");
+            String fullname = resultSet.getString("fullname");
 
-            Account account = new Account(id, username, password, email, address, roleid);
+            Account account = new Account(id, username, password, email, address, roleid, phone, fullname);
             return account;
         } catch (Exception e) {
             System.out.println("Wrong at AccountMapper: " + e.getMessage());

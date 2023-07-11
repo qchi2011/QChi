@@ -59,48 +59,58 @@
                                     </thead>
                                     <tbody>
                                     <c:forEach items="${sessionScope.cart}" var="orderDetails" varStatus="status">
-                                        <tr>
-                                            <fmt:setLocale value = "en_US"/>
-                                            <th scope="row">${status.index + 1}</th>
-                                            <!--Image-->
-                                            <td class="product__cart__item">
-                                                <div class="product__cart__item__pic">
-                                                    <img src="${orderDetails.value.product.image}" 
-                                                         width = "100" height = "100" alt="alt"/> 
-                                               <!--Name-->
-                                                </div>
-                                                <h6 class="product__cart__item__text">${orderDetails.value.product.name}</h6>
-                                            </td>  
-                                            <!--Price-->
-                                            <td class="product__cart__item__text">
-                                                <h5>${String.format("%.2f", orderDetails.value.product.price)}$</h5>
-                                            </td>
-                                            <!--Quantity-->
-                                            <td class="quantity__item">
-                                                <form action="order-update" method ="GET">
-                                                    <div class="quantity">
-                                                        <input type="hidden"
-                                                               name="productID" 
-                                                               value="${orderDetails.value.product.id}" />
-                                                        <div class="pro-qty-2">
-                                                            <input onchange="this.form.submit()" 
-                                                                   type="number"
-                                                                   min ="1"
-                                                                   name="quantity"
-                                                                   value="${orderDetails.value.quantity}">
-                                                        </div>
+
+                                        <fmt:setLocale value = "en_US"/>
+                                    <th scope="row">${status.index + 1}</th>
+                                    <!--Image-->
+                                    <td class="product__cart__item">
+                                        <div class="product__cart__item__pic">
+                                            <img src="${orderDetails.value.product.image}" 
+                                                 width = "100" height = "100" alt="alt"/> 
+                                            <!--Name-->
+                                        </div>
+                                        <h6 class="product__cart__item__text">${orderDetails.value.product.name}</h6>
+                                    </td>  
+                                    <!--Price-->
+                                    <td class="product__cart__item__text">
+                                        <h5>${String.format("%.2f", orderDetails.value.product.price)}$</h5>
+                                    </td>
+                                    <!--Quantity-->
+                                    <td class="quantity__item">
+                                        <form action="cart?action=change-quantity" method ="POST">
+                                            <div class="quantity">
+                                                <input type="hidden" name="id" value="${orderDetails.value.product.id}" />
+
+                                                <div class="pro-qty-2">
+                                                    <!--Minus button-->
+                                                    <div class="input-group-prepend">
+                                                        <button class="fa fa-angle-left qtybtn" type="button" onclick="decreaseQuantity(${orderDetails.value.product.id})"></button>
                                                     </div>
-                                                </form>    
-                                            </td>
-                                            <!--Amount-->
-                                            <td class="cart__price">${String.format("%.2f", orderDetails.value.product.price * orderDetails.value.quantity)}$</td>
-                                            <td class="cart__close">
-                                                <a href="order-delete?productID=${orderDetails.key}">
-                                                    <i class="fa fa-close"></i>
-                                                </a> 
-                                            </td>
-                                        </tr>
-                                    </c:forEach>
+
+                                                    <input id="inputQuantity_${orderDetails.value.product.id}"
+                                                           type="text" value="${orderDetails.value.quantity}" name="quantity">
+                                                    <!--Plus button--> 
+                                                    <div>
+                                                        <button class="fa fa-angle-right qtybtn" type="button" onclick="increaseQuantity(${orderDetails.value.product.id})"></button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </form>    
+                                    </td>
+                                    <!--Amount-->
+                                    <td id="amount-cell" class="cart__price">${String.format("%.2f", orderDetails.value.product.price * orderDetails.value.quantity)}$</td>
+
+                                    <td class="cart__close">
+                                        <form action="cart?action=delete&id=${orderDetails.value.product.id}" method="POST">
+                                            <a onclick="this.closest('form').submit()">
+                                                <i class="fa fa-close"></i>
+                                            </a> 
+                                        </form>
+
+                                    </td>
+                                    </tr>
+                                </c:forEach>
                                 </tbody>
                             </table>
                         </div>
@@ -110,11 +120,7 @@
                                     <a href="${pageContext.request.contextPath}/home">Continue Shopping</a>
                                 </div>
                             </div>
-                            <!--                            <div class="col-lg-6 col-md-6 col-sm-6">
-                                                            <div class="continue__btn update__btn">
-                                                                <a href="#"> Update cart</a>
-                                                            </div>
-                                                        </div>-->
+                           
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -122,12 +128,7 @@
                         <div class="cart__total">
                             <h6>Cart total</h6>
                             <ul>
-                                <!--<li>Subtotal <span>$ 169.50</span></li>-->
-                                <li>Total <span>   <fmt:formatNumber type="currency"
-                                                  value="${requestScope.totalMoney}"
-                                                  maxFractionDigits="2">
-                                        </fmt:formatNumber>
-                                    </span></li>
+                                <li>Total <span id="totalMoney">$</span></li>
                             </ul>
                             <a href="./checkout.jsp" class="primary-btn">Proceed to checkout</a>
                         </div>
@@ -152,5 +153,54 @@
         <script src="${pageContext.request.contextPath}/js/owl.carousel.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/main.js"></script>
     </body>
+    <script>
+                                            window.addEventListener('DOMContentLoaded', function () {
+                                                calculateTotalMoney();
+                                            });
+
+                                            function calculateTotalMoney() {
+                                                var amountCells = document.querySelectorAll('#amount-cell');
+                                                var totalMoney = 0;
+
+                                                amountCells.forEach(function (cell) {
+                                                    var amountValue = parseFloat(cell.innerText);
+                                                    totalMoney += amountValue;
+                                                });
+
+                                                var totalMoneyElement = document.getElementById('totalMoney');
+                                                totalMoneyElement.innerText = totalMoney.toFixed(2) + "$";
+                                            }
+
+                                            function decreaseQuantity(productId) {
+                                                let x = 'inputQuantity_' + productId;
+                                                const inputQuantity = document.getElementById(x);
+                                                let quantity = parseInt(inputQuantity.value);
+
+                                                if (quantity > 1) {
+                                                    quantity--;
+                                                    inputQuantity.value = quantity;
+                                                }
+
+                                                // Lấy đối tượng form chứa inputQuantity
+                                                const form = inputQuantity.closest('form');
+                                                // Submit form
+                                                form.submit();
+                                            }
+
+                                            function increaseQuantity(productId) {
+                                                let x = 'inputQuantity_' + productId;
+                                                const inputQuantity = document.getElementById(x);
+                                                let quantity = parseInt(inputQuantity.value);
+
+                                                quantity++;
+                                                inputQuantity.value = quantity;
+
+                                                // Lấy đối tượng form chứa inputQuantity
+                                                const form = inputQuantity.closest('form');
+                                                // Submit form
+                                                form.submit();
+                                            }
+
+    </script>
 
 </html>

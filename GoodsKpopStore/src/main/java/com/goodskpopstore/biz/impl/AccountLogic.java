@@ -66,14 +66,19 @@ public class AccountLogic implements IGenericLogic<Account> {
 
     }
 
-    public void updateAddress(String username, String address) {
+    public void updateProfile(String username, String fullname, String phone,String address) {
         String sql = "UPDATE [dbo].[Account]\n"
                 + "   SET \n"
+                + "      [fullname] = ?,\n"
+                + "      [phone] = ?,\n"
                 + "      [address] = ?\n"
-                + "      \n"
                 + " WHERE username = ?";
-        dao.update(sql, new Parameter(address, Types.NVARCHAR),
-                new Parameter(username, Types.NVARCHAR));
+        dao.update(sql, new Parameter(fullname, Types.NVARCHAR),
+                new Parameter(phone, Types.NVARCHAR),
+                new Parameter(address, Types.NVARCHAR),
+                new Parameter(username, Types.NVARCHAR)
+        );
     }
+
 
 }

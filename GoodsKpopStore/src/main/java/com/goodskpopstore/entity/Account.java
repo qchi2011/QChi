@@ -30,4 +30,6 @@ public class Account {
     private String email;
     private String address;
     private int roleid;
+    private String phone;
+    private String fullname;
 }

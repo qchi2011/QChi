@@ -1821,6 +1821,8 @@ ol {
     width: 10px;
     cursor: pointer;
     font-weight: 600;
+        border: none;
+
 }
 
 .product__details__cart__option .quantity .pro-qty .qtybtn.inc {
@@ -2396,6 +2398,7 @@ ol {
 
 .shopping__cart__table table tbody tr td.quantity__item .quantity .pro-qty-2 {
     width: 80px;
+    display: flex;
 }
 
 .shopping__cart__table table tbody tr td.quantity__item .quantity .pro-qty-2 input {
@@ -2411,6 +2414,8 @@ ol {
     color: #888888;
     width: 10px;
     cursor: pointer;
+    border: none;
+    background-color: white;
 }
 
 .shopping__cart__table table tbody tr td.cart__price {

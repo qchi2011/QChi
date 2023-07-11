@@ -23,7 +23,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @Getter
 @Setter
-public class OrderDetails {
+public class ItemCart {
     private Product product;
     private int quantity;
 }
