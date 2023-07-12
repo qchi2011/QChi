@@ -33,4 +33,5 @@ public class Product {
     private int quantity;
     private String image;
     private int categoryId;
+    private int status;
 }

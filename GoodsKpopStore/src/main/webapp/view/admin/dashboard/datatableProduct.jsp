@@ -28,6 +28,8 @@
                                 <th>Price</th>
                                 <th>Quantity</th>
                                 <th>Description</th>
+                                <th>Status</th>
+
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -41,9 +43,10 @@
                                              height="100px"
                                              alt="Loi"/>  
                                     </td>
-                                    <td>${product.price}</td>
+                                    <td>${product.price}$</td>
                                     <td>${product.quantity}</td>
                                     <td>${product.description}</td>
+                                    <td>${product.status}</td>
                                     <!--Edit-->
                                     <td style="text-align:center"> 
                                         <i class="fa fa-edit" data-toggle="modal" data-target="#editProductModal" 

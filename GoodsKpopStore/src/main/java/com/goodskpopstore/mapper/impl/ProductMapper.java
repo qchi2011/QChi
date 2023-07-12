@@ -9,7 +9,6 @@ import com.goodskpopstore.mapper.IGenericMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-
 /**
  *
  * @author Admin
@@ -18,7 +17,7 @@ public class ProductMapper implements IGenericMapper<Product> {
 
     @Override
     public Product mapRow(ResultSet resultSet) {
-        try{
+        try {
             int id = resultSet.getInt("id");
             String name = resultSet.getString("name");
             String description = resultSet.getString("description");
@@ -26,18 +25,16 @@ public class ProductMapper implements IGenericMapper<Product> {
             int quantity = resultSet.getInt("quantity");
             String image = resultSet.getString("image");
             int categoryId = resultSet.getInt("categoryId");
-            
-            Product product = new Product(id, name, description, price, quantity, image, categoryId);
+            int status = resultSet.getInt("status");
+
+            Product product = new Product(id, name, description, price, quantity, image, categoryId, status);
             return product;
-        } catch(SQLException e){
-            System.out.println("Wrong at ProductMapper: "+ e.getMessage());
+        } catch (SQLException e) {
+            System.out.println("Wrong at ProductMapper: " + e.getMessage());
             e.printStackTrace();
             return null;
         }
-        
-    }    
-    
 
-    
+    }
+
 }
-
