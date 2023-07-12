@@ -71,9 +71,10 @@ public class CheckOutServlet extends HttpServlet {
         }
 
         //go to dashboard
-//        response.sendRedirect("home");
+//        response.sendRedirect("profile");
         request.getRequestDispatcher("view/user/cart/success.jsp").forward(request, response);
-        session.removeAttribute("cart");
+//        request.getRequestDispatcher("view/common/dashboard2/profile.jsp").forward(request, response);
+//        session.removeAttribute("cart");
     }
 
     private float calculateTotalAmount(HashMap<Integer, ItemCart> cart) {

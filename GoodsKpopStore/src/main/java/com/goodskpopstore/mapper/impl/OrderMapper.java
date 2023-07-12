@@ -14,7 +14,7 @@ import java.sql.Timestamp;
  *
  * @author Admin
  */
-public class OrderMapper implements IGenericMapper<Order>{
+public class OrderMapper implements IGenericMapper<Order> {
 
     @Override
     public Order mapRow(ResultSet resultSet) {
@@ -24,7 +24,9 @@ public class OrderMapper implements IGenericMapper<Order>{
             String description = resultSet.getString("description");
             Timestamp createAt = resultSet.getTimestamp("createAt");
             int accountId = resultSet.getInt("accountId");
-            Order order = new Order(id, quantity, description, createAt, accountId);
+            int status = resultSet.getInt("status");
+
+            Order order = new Order(id, quantity, description, createAt, accountId, status);
             return order;
         } catch (SQLException e) {
             System.out.println("Wrong at OrderMapper: " + e.getMessage());
@@ -33,5 +35,5 @@ public class OrderMapper implements IGenericMapper<Order>{
         }
 
     }
-    
+
 }

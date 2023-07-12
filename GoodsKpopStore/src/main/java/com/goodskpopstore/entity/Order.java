@@ -31,5 +31,6 @@ public class Order {
     private String description;
     private Timestamp createAt;
     private int accountId;
+    private int status;
 
 }

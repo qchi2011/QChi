@@ -60,5 +60,11 @@ public class OrderDAO extends DBContext<Order> implements IGenericDAO<Order>{
     public void delete(Order t) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+    public List<Order> findOrdersByAccountId(int accountId) {
+        String sql = "select * from [Order] where accountId = ?";
+        List<Order> listOrder = query(sql, new OrderMapper(), new Parameter(accountId,Types.INTEGER ));
+        return listOrder;
+    }
     
 }

@@ -57,7 +57,7 @@
         <servlet-class>com.goodskpopstore.controller.user.DetailServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>DashboardServlet</servlet-name>
+        <servlet-name>ProfileServlet</servlet-name>
         <servlet-class>com.goodskpopstore.controller.user.ProfileServlet</servlet-class>
     </servlet>
     <servlet>
@@ -75,6 +75,10 @@
     <servlet>
         <servlet-name>PurchaseServlet</servlet-name>
         <servlet-class>com.goodskpopstore.controller.user.PurchaseServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DashboardServlet2</servlet-name>
+        <servlet-class>com.goodskpopstore.controller.user.DashboardServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>HomePageServlet</servlet-name>
@@ -121,7 +125,7 @@
         <url-pattern>/detail</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>DashboardServlet</servlet-name>
+        <servlet-name>ProfileServlet</servlet-name>
         <url-pattern>/profile</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
@@ -139,6 +143,10 @@
     <servlet-mapping>
         <servlet-name>PurchaseServlet</servlet-name>
         <url-pattern>/purchase</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DashboardServlet2</servlet-name>
+        <url-pattern>/dashboard2</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

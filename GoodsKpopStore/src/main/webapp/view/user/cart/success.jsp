@@ -23,7 +23,7 @@
                             <h3 class="mt-5 theme-color mb-5" style="text-align: center">Thanks for your order ! </h3>
                             <div style="display:flex">
                             <div class="text-center mt-5" style="margin-right:20px">
-                                <a class="btn btn-primary" href="">Track your order</a>
+                                <a class="btn btn-primary" href="${pageContext.request.contextPath}/purchase">Track your order</a>
                             </div>   
                             <div class="text-center mt-5">
                                 <a class="btn btn-primary" href="${pageContext.request.contextPath}/home">Continue Shopping</a>

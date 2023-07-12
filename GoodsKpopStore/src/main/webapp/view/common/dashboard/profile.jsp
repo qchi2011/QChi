@@ -35,19 +35,19 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-12 text-center">
-                                        <h4>Thông tin của bạn</h4>
+                                        <h4>ThÃ´ng tin cá»§a báº¡n</h4>
                                         <hr>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12 justify-content-center">
                                         <form class="justify-content-center" action="${pageContext.request.contextPath}/dashboard?action=profile" method="POST">
-                                            <!-- Username -->
-                                            <div class="form-group justify-content-center row">
-                                                <label for="username" class="col-2 col-form-label">Tài khoản</label>
-                                                <div class="col-6">
-                                                    <input id="username" name="username" placeholder="Tài khoản" readonly class="form-control here"
-                                                           type="text" value="${sessionScope.account.username}">
+                                        <!-- Username -->
+                                        <div class="form-group justify-content-center row">
+                                            <label for="username" class="col-2 col-form-label">Tài khoản</label>
+                                            <div class="col-6">
+                                                <input id="username" name="username" placeholder="TÃ i khoáº£n" readonly class="form-control here"
+                                                       type="text" value="${sessionScope.account.username}">
                                             </div>
                                         </div>
                                         <!-- Email -->
@@ -62,7 +62,7 @@
                                         <div class="form-group justify-content-center row">
                                             <label for="address" class="col-2 col-form-label">Địa chỉ</label>
                                             <div class="col-6">
-                                                <input id="address" name="address" placeholder="Địa chỉ" 
+                                                <input id="address" name="address" placeholder="Äá»a chá»" 
                                                        class="form-control here" type="text"
                                                        value="${sessionScope.account.address}">
                                             </div>
@@ -71,7 +71,7 @@
                                         <!-- Save button -->
                                         <div class="form-group justify-content-center row">
                                             <div class="offset-4 col-8">
-                                                <button name="submit" type="submit" class="btn btn-primary">Lưu thông tin</button>
+                                                <button name="submit" type="submit" class="btn btn-primary">LÆ°u thÃ´ng tin</button>
                                             </div>
                                         </div>
                                     </form>
@@ -117,4 +117,8 @@
 
     <!-- Demo scripts for this page-->
     <script src="${pageContext.request.contextPath}/js/demo/datatables-demo.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </html>

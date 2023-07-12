@@ -4,9 +4,11 @@
  */
 package com.goodskpopstore.controller.user;
 
+import com.goodskpopstore.dal.impl.OrderDAO;
 import com.goodskpopstore.dal.impl.OrderDetailsDAO;
 import com.goodskpopstore.dal.impl.ProductDAO;
 import com.goodskpopstore.entity.Account;
+import com.goodskpopstore.entity.Order;
 import com.goodskpopstore.entity.OrderDetails;
 import com.goodskpopstore.entity.Product;
 import java.io.IOException;
@@ -27,6 +29,7 @@ public class PurchaseServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        OrderDAO orderDAO = new OrderDAO();
         OrderDetailsDAO orderDetailsDAO = new OrderDetailsDAO();
         ProductDAO productDAO = new ProductDAO();
         HttpSession session = request.getSession();
@@ -40,15 +43,29 @@ public class PurchaseServlet extends HttpServlet {
         if (hashmapProduct == null) {
             hashmapProduct = productDAO.findProductsByAccountId(account.getId());
         }
+        
+//        get list order by accountID
+         List<Order> listOrder = orderDAO.findOrdersByAccountId(account.getId());
+         System.out.println("-----------\nlistOrder:");
+         for( Order o : listOrder ){
+             System.out.println(o);
+         }
+         
+         
         //get list orderDetails
-        List<OrderDetails> listOrderDetails
-                = listOrderDetails = orderDetailsDAO.findsByAccountId(account.getId());
+        List<OrderDetails> listOrderDetails = orderDetailsDAO.findsByAccountId(account.getId());
 
+        System.out.println("-------------\nlistOrderDetails: ");
+        for( OrderDetails o : listOrderDetails ){
+             System.out.println(o);
+         }
         //set attribute to session
+        session.setAttribute("listOrder", listOrder);
         session.setAttribute("listOrderDetails", listOrderDetails);
         session.setAttribute("hashmapProduct", hashmapProduct);
 
-        response.sendRedirect("dashboard?page=purchase");
+//        response.sendRedirect("dashboard?page=purchase");
+          response.sendRedirect("profile");
     }
 
     @Override
