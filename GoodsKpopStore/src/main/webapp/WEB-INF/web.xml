@@ -65,8 +65,12 @@
         <servlet-class>com.goodskpopstore.controller.user.CartServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>CheckOutServlet</servlet-name>
-        <servlet-class>com.goodskpopstore.controller.user.CheckOutServlet</servlet-class>
+        <servlet-name>Orders</servlet-name>
+        <servlet-class>com.goodskpopstore.controller.user.Orders</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PurchaseServlet</servlet-name>
+        <servlet-class>com.goodskpopstore.controller.user.PurchaseServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>HomePageServlet</servlet-name>
@@ -121,8 +125,12 @@
         <url-pattern>/cart</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>CheckOutServlet</servlet-name>
-        <url-pattern>/checkout</url-pattern>
+        <servlet-name>Orders</servlet-name>
+        <url-pattern>/order</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PurchaseServlet</servlet-name>
+        <url-pattern>/purchase</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

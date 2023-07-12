@@ -37,8 +37,6 @@
     <body>
         <!--Header-->
         <jsp:include page="../../common/homepage/header.jsp"></jsp:include>
-
-
             <!-- Checkout Section Begin -->
             <section class="checkout spad">
                 <div class="container">
@@ -55,7 +53,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="checkout__input">
                                         <p>Address<span>*</span></p>
                                         <input type="text" class="checkout__input__add" value="${sessionScope.account.address}">

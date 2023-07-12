@@ -11,6 +11,7 @@ import com.goodskpopstore.entity.Product;
 import com.goodskpopstore.mapper.impl.ProductMapper;
 import com.goodskpopstore.constant.CommonConst;
 import java.sql.Types;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -36,7 +37,7 @@ public class ProductDAO extends DBContext<Product> implements IGenericDAO<Produc
 
     @Override
     public int insertToDb(Product t) {
-       String sql = "INSERT INTO [Product]\n"
+        String sql = "INSERT INTO [Product]\n"
                 + "           ([name]\n"
                 + "           ,[description]\n"
                 + "           ,[price]\n"
@@ -58,7 +59,7 @@ public class ProductDAO extends DBContext<Product> implements IGenericDAO<Produc
                 new Parameter(t.getImage(), Types.NVARCHAR),
                 new Parameter(t.getCategoryId(), Types.INTEGER)
         );
-        return  id;       
+        return id;
     }
 
     public static void main(String[] args) {
@@ -111,7 +112,7 @@ public class ProductDAO extends DBContext<Product> implements IGenericDAO<Produc
 
     @Override
     public void updateToDb(Product t) {
-       String sql = "UPDATE [Product]\n"
+        String sql = "UPDATE [Product]\n"
                 + "   SET [name] = ?\n"
                 + "      ,[description] = ?\n"
                 + "      ,[price] = ?\n"
@@ -132,9 +133,25 @@ public class ProductDAO extends DBContext<Product> implements IGenericDAO<Produc
 
     @Override
     public void delete(Product t) {
-      String sql = "DELETE FROM PRODUCT\n"
-                    + "WHERE id = ?";
-        update(sql, new Parameter(t.getId(),Types.INTEGER));
+        String sql = "DELETE FROM PRODUCT\n"
+                + "WHERE id = ?";
+        update(sql, new Parameter(t.getId(), Types.INTEGER));
+    }
+
+    public HashMap<Integer, Product> findProductsByAccountId(int id) {
+        String sql = "select b.*\n"
+                + "from Account as a, Product as b, [Order] as o, OrderDetails as od\n"
+                + "where b.id = od.productId and od.orderId = o.id and o.accountId = a.id\n"
+                + "and a.id = ?";
+        List<Product> list = query(sql, new ProductMapper(),
+                new Parameter(id, Types.INTEGER)
+        );
+        HashMap<Integer, Product> hashMap = new HashMap<>();
+        // Iterate through the ArrayList and add elements to the HashMap
+        for (Product product : list) {
+            hashMap.put(product.getId(), product);
+        }
+        return hashMap;
     }
 
 }

@@ -39,6 +39,7 @@
                                 <div class="list-group list-group-flush account-settings-links">
                                     <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account-general">General</a>
                                     <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-change-password">Change password</a>
+                                    <a class="list-group-item list-group-item-action" href="${pageContext.request.contextPath}/order">View orders</a>
                                 </div>
                             </div>
                             <div class="col-md-9">
