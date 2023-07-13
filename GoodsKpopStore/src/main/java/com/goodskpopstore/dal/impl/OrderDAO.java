@@ -17,7 +17,7 @@ import java.util.List;
  *
  * @author Admin
  */
-public class OrderDAO extends DBContext<Order> implements IGenericDAO<Order>{
+public class OrderDAO extends DBContext<Order> implements IGenericDAO<Order> {
 
     @Override
     public List<Order> findAll() {
@@ -35,9 +35,11 @@ public class OrderDAO extends DBContext<Order> implements IGenericDAO<Order>{
                 + "           ([amount]\n"
                 + "           ,[description]\n"
                 + "           ,[createAt]\n"
-                + "           ,[accountId])\n"
+                + "           ,[accountId]\n"
+                + "           ,[status])\n"
                 + "     VALUES\n"
                 + "           (?\n"
+                + "           ,?\n"
                 + "           ,?\n"
                 + "           ,?\n"
                 + "           ,?)";
@@ -45,26 +47,30 @@ public class OrderDAO extends DBContext<Order> implements IGenericDAO<Order>{
                 new Parameter(t.getAmount(), Types.FLOAT),
                 new Parameter(t.getDescription(), Types.NVARCHAR),
                 new Parameter(t.getCreateAt(), Types.TIMESTAMP),
-                new Parameter(t.getAccountId(), Types.INTEGER)
+                new Parameter(t.getAccountId(), Types.TIMESTAMP),
+                new Parameter(1, Types.INTEGER)
         );
-        
+
     }
 
-
+//    true
     @Override
     public void updateToDb(Order t) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "UPDATE [ORDER] SET status = 0 WHERE id = ?";
+        update(sql, new Parameter(t.getId(), Types.INTEGER));
     }
 
     @Override
     public void delete(Order t) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "DELETE FROM [ORDER]\n"
+                + "WHERE id = ?";
+        update(sql, new Parameter(t.getId(), Types.INTEGER));
     }
 
-    public List<Order> findOrdersByAccountId(int accountId) {
-        String sql = "select * from [Order] where accountId = ?";
-        List<Order> listOrder = query(sql, new OrderMapper(), new Parameter(accountId,Types.INTEGER ));
+    public List<Order> findOrdersByAccountId(int accountId, int status) {
+        String sql = "select * from [Order] where accountId = ? and status = 1";
+        List<Order> listOrder = query(sql, new OrderMapper(), new Parameter(accountId, Types.INTEGER));
         return listOrder;
     }
-    
+
 }

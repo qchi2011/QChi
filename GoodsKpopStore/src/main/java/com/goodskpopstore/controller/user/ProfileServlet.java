@@ -23,6 +23,7 @@ public class ProfileServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        System.out.println("do get profile");
         request.getRequestDispatcher("view/common/dashboard2/profile.jsp").forward(request, response);
     }
 

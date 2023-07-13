@@ -56,6 +56,7 @@ public class CheckOutServlet extends HttpServlet {
                 description(note).
                 createAt(Timestamp.valueOf(LocalDateTime.now())).
                 accountId(account.getId()).
+                status(1).
                 build();
         int orderId = orderDAO.insertToDb(order);
         //create order details for each item in cart and insert to DB

@@ -116,6 +116,8 @@ public class CartServlet extends HttpServlet {
         //change quantity of product
         ItemCart itemCart = cart.get(id);
         itemCart.setQuantity(quantity);
+        
+        System.out.println(itemCart);
         //luu tru cart len session
         session.setAttribute("cart", cart);
 

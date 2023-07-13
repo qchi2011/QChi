@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package com.goodskpopstore.controller.user;
+package com.goodskpopstore.controller.admin;
 
 import com.goodskpopstore.dal.impl.OrderDAO;
 import com.goodskpopstore.dal.impl.OrderDetailsDAO;
@@ -24,19 +24,17 @@ import javax.servlet.http.HttpSession;
  *
  * @author Admin
  */
-public class PurchaseServlet extends HttpServlet {
+public class AdminPurchaseServlet extends HttpServlet {
 
-    @Override
+ @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         OrderDAO orderDAO = new OrderDAO();
         OrderDetailsDAO orderDetailsDAO = new OrderDetailsDAO();
         ProductDAO productDAO = new ProductDAO();
         HttpSession session = request.getSession();
-
         //get account
         Account account = (Account) session.getAttribute("account");
-
         //get list product purchase by account id
         HashMap<Integer, Product> hashmapProduct = (HashMap<Integer, Product>) session.getAttribute("hashmapProduct");
 
@@ -45,24 +43,20 @@ public class PurchaseServlet extends HttpServlet {
         }
         
 //        get list order by accountID
-         List<Order> listOrder = orderDAO.findOrdersByAccountId(account.getId(),1);
-//         for(Order o : listOrder){
-//             System.out.println(o);
-//         }
+         List<Order> listOrder = orderDAO.findOrdersByAccountId(account.getId());
+         
          
         //get list orderDetails
         List<OrderDetails> listOrderDetails = orderDetailsDAO.findsByAccountId(account.getId());
-//        for(OrderDetails o : listOrderDetails){
-//            System.out.println(o);
-//        }
-        
+
+
         //set attribute to session
         session.setAttribute("listOrder", listOrder);
         session.setAttribute("listOrderDetails", listOrderDetails);
         session.setAttribute("hashmapProduct", hashmapProduct);
 
 //        response.sendRedirect("dashboard?page=purchase");
-          response.sendRedirect("profile");
+          response.sendRedirect("home");
           
     }
 
@@ -71,5 +65,4 @@ public class PurchaseServlet extends HttpServlet {
             throws ServletException, IOException {
 
     }
-
 }

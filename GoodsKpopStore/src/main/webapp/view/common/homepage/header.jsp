@@ -29,8 +29,8 @@
                 <c:if test="${sessionScope.account != null}">
                     <a class="fa-sharp fa-solid fa-sign-out" href="${pageContext.request.contextPath}/logout"></a>
                     
+                    <!--<a href="${pageContext.request.contextPath}/profile" class="fa-solid fa-gear"></a>-->
                     <a href="${pageContext.request.contextPath}/profile" class="fa-solid fa-gear"></a>
-
                 </c:if>
             </div>
         </nav>

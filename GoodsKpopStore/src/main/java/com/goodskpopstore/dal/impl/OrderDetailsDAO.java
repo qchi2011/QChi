@@ -32,9 +32,9 @@ public class OrderDetailsDAO extends DBContext<OrderDetails> implements IGeneric
     @Override
     public int insertToDb(OrderDetails t) {
         String sql = "INSERT INTO [dbo].[OrderDetails]\n"
-                + "           ([quantity]\n"
+                + "           ( [quantity]\n"
                 + "           ,[productId]\n"
-                + "           ,[orderId])\n"
+                + "           ,[orderId] )\n"
                 + "     VALUES\n"
                 + "           (?\n"
                 + "           ,?\n"
