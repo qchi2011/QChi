@@ -154,4 +154,11 @@ public class ProductDAO extends DBContext<Product> implements IGenericDAO<Produc
         return hashMap;
     }
 
+    public List<Product> findProductByStatus() {
+        String sql = "select * from Product\n"
+                + "where status = 1";
+        List<Product> list = query(sql, new ProductMapper());
+        return list;
+    }
+
 }

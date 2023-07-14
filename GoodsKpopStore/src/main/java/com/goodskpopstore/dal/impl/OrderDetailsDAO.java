@@ -21,7 +21,15 @@ public class OrderDetailsDAO extends DBContext<OrderDetails> implements IGeneric
 
     @Override
     public List<OrderDetails> findAll() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "select * from [OrderDetails]";
+        List<OrderDetails> list = query(sql, new OrderDetailsMapper());
+        return list;
+    }
+
+    public List<OrderDetails> findById(int id) {
+        String sql = "select * from [OrderDetails] WHERE orderId = ?";
+        List<OrderDetails> list = query(sql, new OrderDetailsMapper(), new Parameter(id, Types.INTEGER));
+        return list;
     }
 
     @Override
@@ -47,7 +55,6 @@ public class OrderDetailsDAO extends DBContext<OrderDetails> implements IGeneric
 
     }
 
-
     @Override
     public void updateToDb(OrderDetails t) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
@@ -57,7 +64,6 @@ public class OrderDetailsDAO extends DBContext<OrderDetails> implements IGeneric
     public void delete(OrderDetails t) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-   
 
     public List<OrderDetails> findsByAccountId(int id) {
         String sql = "select od.*\n"

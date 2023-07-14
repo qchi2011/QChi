@@ -168,85 +168,83 @@
                                                             </td>
                                                             <!--Amount-->
                                                             <td id="amount-cell" class="cart__price">${String.format("%.2f", product.price * orderDetails.quantity)}$</td>
+                                                            </tbody>
+                                                            <c:set var="total" value="${total + product.price * orderDetails.quantity}"/>
+                                                        </c:if>
 
-                                                    </div>
-                                                    </tbody>
-                                                    <c:set var="total" value="${total + product.price * orderDetails.quantity}"/>
-                                                </c:if>
+                                                    </c:forEach>
 
-                                            </c:forEach>
-
-                                            </table>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-9 col-md-9 col-sm-9">
-                                                <div class="continue__btn">
-                                                    <a href ="deletepurchase?orderId=${orders.id}">
-                                                        Cancel Order
-                                                    </a>
-                                                </div>
-                                            </div>   
-                                            <div class="col-lg-2 col-md-2 col-sm-2">
-                                                <span >
-                                                    Total: ${String.format("%.2f",total)}$
-                                                </span>
+                                                </table>
                                             </div>
-                                        </div>
-                                        <!--                                            </div>
-                                                               </div>-->
-                                        <br><br><br><br>
+                                            <div class="row">
+                                                <div class="col-lg-9 col-md-9 col-sm-9">
+                                                    <div class="continue__btn">
+                                                        <a href ="deletePurchase?orderId=${orders.id}">
+                                                            Cancel Order
+                                                        </a>
+                                                    </div>
+                                                </div>   
+                                                <div class="col-lg-2 col-md-2 col-sm-2">
+                                                    <span >
+                                                        Total: ${String.format("%.2f",total)}$
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <!--                                            </div>
+                                                                   </div>-->
+                                            <br><br><br><br>
                                         </c:forEach>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="text-right mt-3" style="margin-bottom: 90px">
+                        <button type="submit" class="btn btn-primary">Save changes</button>&nbsp;
+                        <button type="button" class="btn btn-default">Cancel</button>
+                    </div>
+                </form>
             </div>
-            <div class="text-right mt-3" style="margin-bottom: 90px">
-                <button type="submit" class="btn btn-primary">Save changes</button>&nbsp;
-                <button type="button" class="btn btn-default">Cancel</button>
-            </div>
-        </form>
-    </div>
-</div>
-<jsp:include page="../../common/homepage/footer.jsp"></jsp:include>
+        </div>
+        <jsp:include page="../../common/homepage/footer.jsp"></jsp:include>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
-            integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30WpbsGTqbIiAwxTsbe76DErLq5EDQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <!-- Bootstrap core JavaScript-->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+                    integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30WpbsGTqbIiAwxTsbe76DErLq5EDQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"
-            integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <!-- Core plugin JavaScript-->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"
+                    integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <!-- Page level plugin JavaScript-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.9.19/js/jquery.dataTables.min.js"
-            integrity="sha512-c2bQrjZ1iFm8q28SJKvX+A/H6ItQ+jumpms8XGVRkpc2lWxiNl1WcoI4pf0g5/1tDfcShv7oTwzWF3qizR03ZQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.9.19/js/dataTables.bootstrap4.min.js"
-            integrity="sha512-LNaU4dKqd/wXAdyvZg+hH0YqMIlEVJNe1qFoIdqLr1S/ontCVJGn7fM7YUos9oqHRfmTgok1DTtUHpvxzNRrEg==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <!-- Page level plugin JavaScript-->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.9.19/js/jquery.dataTables.min.js"
+                    integrity="sha512-c2bQrjZ1iFm8q28SJKvX+A/H6ItQ+jumpms8XGVRkpc2lWxiNl1WcoI4pf0g5/1tDfcShv7oTwzWF3qizR03ZQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.9.19/js/dataTables.bootstrap4.min.js"
+                    integrity="sha512-LNaU4dKqd/wXAdyvZg+hH0YqMIlEVJNe1qFoIdqLr1S/ontCVJGn7fM7YUos9oqHRfmTgok1DTtUHpvxzNRrEg==" 
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="${pageContext.request.contextPath}/js/sb-admin.min.js"></script>
+            <!-- Custom scripts for all pages-->
+            <script src="${pageContext.request.contextPath}/js/sb-admin.min.js"></script>
 
 
-<script>
-    // Call the dataTables jQuery plugin
-    $(document).ready(function () {
-        $('#dataTablePurchase').DataTable();
-    });
+        <script>
+            // Call the dataTables jQuery plugin
+            $(document).ready(function () {
+                $('#dataTablePurchase').DataTable();
+            });
 
 
-    function deleteProductModal(id) {
-        $('#id').val(id);
-    }
+            function deleteProductModal(id) {
+                $('#id').val(id);
+            }
 
 
-</script>
-</body>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        </script>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </html>

@@ -58,12 +58,12 @@ public class DashboardServlet extends HttpServlet {
             response.sendRedirect("dashboard");
         }
         switch (action) {
-//            case "profile":
-//                //update
+            case "profile":
+                //update
 //                updateProfile(request, response);
-//                //quay tro ve trang dashboard
-//                response.sendRedirect("dashboard?page=profile");
-//                break;
+                //quay tro ve trang dashboard
+                response.sendRedirect("dashboard?page=profile");
+                break;
             default:
                 response.sendRedirect("dashboard");
         }

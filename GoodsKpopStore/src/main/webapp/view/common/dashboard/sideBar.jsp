@@ -21,28 +21,29 @@
                 </a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link" href="${pageContext.request.contextPath}/admin-purchase">
+                <a class="nav-link" href="http://localhost:8080/GoodsKpopStore/admin/dashboard?page=purchase">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Orders</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="${pageContext.request.contextPath}/dashboard?page=profile">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Profile</span></a>
+            <li class="nav-item dropdown">
+                <a class="nav-link" href="${pageContext.request.contextPath}/admin/dashboard?page=account">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Account</span>
+                </a>
             </li>
-            <li class="nav-item">
+<!--            <li class="nav-item">
                 <a class="nav-link" href="tables.html">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Tables</span></a>
-            </li>
+            </li>-->
             <%--<c:if test="${sessionScope.account != null && sessionScope.account.roleId == 1}">--%>
-<!--                <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/purchase">
-                        <i class="fas fa-fw fa-table"></i>
-                        <span>Purchase</span>
-                    </a>
-                </li>-->
+            <!--                <li class="nav-item">
+                                <a class="nav-link" href="${pageContext.request.contextPath}/purchase">
+                                    <i class="fas fa-fw fa-table"></i>
+                                    <span>Purchase</span>
+                                </a>
+                            </li>-->
             <%--</c:if>--%>
         </ul>
     </body>

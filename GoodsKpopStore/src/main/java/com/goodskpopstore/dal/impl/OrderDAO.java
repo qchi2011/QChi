@@ -21,7 +21,16 @@ public class OrderDAO extends DBContext<Order> implements IGenericDAO<Order> {
 
     @Override
     public List<Order> findAll() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "select * from [Order]";
+        List<Order> list = query(sql, new OrderMapper());
+        return list;
+    }
+    
+    
+    public List<Order> findAllExist() {
+        String sql = "select * from [Order] where status = 1";
+        List<Order> list = query(sql, new OrderMapper());
+        return list;
     }
 
     @Override

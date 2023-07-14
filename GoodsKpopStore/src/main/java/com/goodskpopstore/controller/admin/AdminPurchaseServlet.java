@@ -7,12 +7,9 @@ package com.goodskpopstore.controller.admin;
 import com.goodskpopstore.dal.impl.OrderDAO;
 import com.goodskpopstore.dal.impl.OrderDetailsDAO;
 import com.goodskpopstore.dal.impl.ProductDAO;
-import com.goodskpopstore.entity.Account;
 import com.goodskpopstore.entity.Order;
-import com.goodskpopstore.entity.OrderDetails;
 import com.goodskpopstore.entity.Product;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -26,38 +23,28 @@ import javax.servlet.http.HttpSession;
  */
 public class AdminPurchaseServlet extends HttpServlet {
 
- @Override
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        System.out.println("tu xoa order sang");
         OrderDAO orderDAO = new OrderDAO();
         OrderDetailsDAO orderDetailsDAO = new OrderDetailsDAO();
         ProductDAO productDAO = new ProductDAO();
         HttpSession session = request.getSession();
-        //get account
-        Account account = (Account) session.getAttribute("account");
-        //get list product purchase by account id
-        HashMap<Integer, Product> hashmapProduct = (HashMap<Integer, Product>) session.getAttribute("hashmapProduct");
-
-        if (hashmapProduct == null) {
-            hashmapProduct = productDAO.findProductsByAccountId(account.getId());
-        }
-        
-//        get list order by accountID
-         List<Order> listOrder = orderDAO.findOrdersByAccountId(account.getId());
-         
-         
+//      get list order 
+        List<Order> listOrder = orderDAO.findAllExist();
         //get list orderDetails
-        List<OrderDetails> listOrderDetails = orderDetailsDAO.findsByAccountId(account.getId());
-
-
+//        List<OrderDetails> listOrderDetails = orderDetailsDAO.findAll();
+        List<Product> listProduct = productDAO.findProductByStatus();
         //set attribute to session
         session.setAttribute("listOrder", listOrder);
-        session.setAttribute("listOrderDetails", listOrderDetails);
-        session.setAttribute("hashmapProduct", hashmapProduct);
+        session.setAttribute("ProductDAO", productDAO);
+        session.setAttribute("OrderDetailsDAO", orderDetailsDAO);
+//        session.setAttribute("listOrderDetails", listOrderDetails);
+        session.setAttribute("listProduct", listProduct);
 
 //        response.sendRedirect("dashboard?page=purchase");
-          response.sendRedirect("home");
-          
+        response.sendRedirect("../view/user/dashboard/purchase.jsp");
     }
 
     @Override

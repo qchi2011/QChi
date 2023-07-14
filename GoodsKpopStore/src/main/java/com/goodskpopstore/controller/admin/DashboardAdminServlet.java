@@ -36,13 +36,47 @@ public class DashboardAdminServlet extends HttpServlet {
         session.setAttribute("listProduct", listAllProducts);
         session.setAttribute("listCategories", listCategories);
 
-        request.getRequestDispatcher("../view/admin/dashboard/index.jsp").forward(request, response);
+        String page = request.getParameter("page");
+        System.out.println(page);
+        if (page == null || page.isEmpty()) {
+//            luc moi dang nhap
+//            request.getRequestDispatcher("../view/admin/dashboard/index.jsp").forward(request, response);
+            response.sendRedirect("../view/admin/dashboard/index.jsp");
+        } else {
+            switch (page) {
+                case "purchase":
+                    response.sendRedirect("http://localhost:8080/GoodsKpopStore/admin/purchase");
+                    break;
+                case "account":
+                    response.sendRedirect("http://localhost:8080/GoodsKpopStore/admin/account");
+                    break;
+                default:
+                    request.getRequestDispatcher("../view/admin/dashboard/index.jsp").forward(request, response);
+            }
+        }
+
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        String action = request.getParameter("action");
+        if (action == null || action.isEmpty()) {
+            response.sendRedirect("admin/dashboard");
+        }
+        switch (action) {
+            case "purchase":
+                //update
+//                updateProfile(request, response);
+                //quay tro ve trang dashboard
+                response.sendRedirect("admin/purchase");
+                break;
+            case "account":
+                response.sendRedirect("admin/account");
+                break;
+            default:
+                response.sendRedirect("admin/dashboard");
+        }
     }
 
 }

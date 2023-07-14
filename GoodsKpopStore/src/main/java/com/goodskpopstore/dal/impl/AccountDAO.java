@@ -20,7 +20,9 @@ public class AccountDAO extends DBContext<Account> implements IGenericDAO<Accoun
 
     @Override
     public List<Account> findAll() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "select * from [Account]";
+        List<Account> list = query(sql, new AccountMapper());
+        return list;
     }
 
     @Override
@@ -57,7 +59,9 @@ public class AccountDAO extends DBContext<Account> implements IGenericDAO<Accoun
 
     @Override
     public void delete(Account t) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+         String sql = "DELETE FROM ACCOUNT\n"
+                + "WHERE id = ?";
+        update(sql, new Parameter(t.getId(), Types.INTEGER));
     }
 
     public Account findByUsernamePassword(Account account) {

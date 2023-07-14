@@ -1,4 +1,4 @@
-    <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,7 +42,7 @@
                 <div class="container-fluid">
 
                     <!-- Breadcrumbs-->
-                    <jsp:include page="../../common/dashboard/breadcumb.jsp" ></jsp:include>
+                    <%--<jsp:include page="../../common/dashboard/breadcumb.jsp" ></jsp:include>--%>
 
                     <!-- Icon Cards-->
                     <%--<jsp:include page="../../common/dashboard/iconCard.jsp" ></jsp:include>--%>
@@ -51,7 +51,7 @@
                     <%--<jsp:include page="../../common/dashboard/areaChart.jsp" ></jsp:include>--%>
 
                     <!-- DataTables Example -->
-                    <jsp:include page="../../admin/dashboard/datatableProduct.jsp"></jsp:include>
+                    <jsp:include page="../../admin/dashboard/accountTable.jsp"></jsp:include>
 
                 </div>
                 <!-- /.container-fluid -->
