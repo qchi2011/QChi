@@ -24,6 +24,7 @@
                         <thead>
                             <tr>
                                 <!--<th>ID</th>-->
+                                <th>Id</th>
                                 <th>Username</th>
                                 <th>Password</th>
                                 <th>Email</th>
@@ -36,13 +37,19 @@
                         <tbody>
                             <c:forEach items="${sessionScope.listAccount}" var="a">
                                 <tr>
+                                    <td>${a.id}</td>
                                     <td>${a.username}</td>
                                     <td>${a.password}</td>
                                     <td>${a.email}</td>
                                     <td>${a.fullname}</td>
                                     <td>${a.phone}</td>
                                     <td>${a.address}</td>
-                                    <td style="display: flex; justify-content: center;">
+                                    <!--Edit-->
+                                    <td style="text-align:center"> 
+                                        <i class="fa fa-edit" data-toggle="modal" data-target="#editAccountModal" 
+                                           onclick="editAccountModal(${a.id}, '${a.username}', '${a.password}','${a.email}','${a.fullname}', '${a.phone}','${a.address}')"></i>
+                                        &nbsp;&nbsp;
+                                    
                                         <i class="fa fa-trash" data-toggle="modal" data-target="#delete-account-modal" onclick="deleteAccountModal(${a.id})" style="cursor: pointer;"></i>  
                                     </td>
                                 </tr>
@@ -52,7 +59,7 @@
                 </div>
             </div>
             <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-            <%--<jsp:include page="../modal/editProductModal.jsp"></jsp:include>--%>
+            <jsp:include page="../modal/editAccountModal.jsp"></jsp:include>
             <jsp:include page="../modal/deleteAccountModal.jsp"></jsp:include>
 
         </div>

@@ -54,7 +54,23 @@ public class AccountDAO extends DBContext<Account> implements IGenericDAO<Accoun
 
     @Override
     public void updateToDb(Account t) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+         String sql = "UPDATE [Account]\n"
+                + "   SET [username] = ?\n"
+                + "      ,[password] = ?\n"
+                + "      ,[email] = ?\n"
+                + "      ,[fullname] = ?\n"
+                + "      ,[phone] = ?\n"
+                + "      ,[address] = ?\n"
+                + " WHERE id = ?";
+        update(sql,
+                new Parameter(t.getUsername(), Types.NVARCHAR),
+                new Parameter(t.getPassword(), Types.NVARCHAR),
+                new Parameter(t.getEmail(), Types.NVARCHAR),
+                new Parameter(t.getFullname(), Types.NVARCHAR),
+                new Parameter(t.getPhone(), Types.NVARCHAR),
+                new Parameter(t.getAddress(), Types.NVARCHAR),
+                new Parameter(t.getId(), Types.INTEGER)
+        );
     }
 
     @Override

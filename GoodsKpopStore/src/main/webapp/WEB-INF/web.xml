@@ -100,6 +100,10 @@
         <servlet-name>AdminDeletePurchaseServlet</servlet-name>
         <servlet-class>com.goodskpopstore.controller.admin.AdminDeletePurchaseServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditAccountServlet</servlet-name>
+        <servlet-class>com.goodskpopstore.controller.admin.EditAccountServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomePageServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -187,6 +191,10 @@
     <servlet-mapping>
         <servlet-name>AdminDeletePurchaseServlet</servlet-name>
         <url-pattern>/AdminDeletePurchaseServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditAccountServlet</servlet-name>
+        <url-pattern>/EditAccountServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

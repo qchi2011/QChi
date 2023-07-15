@@ -23,7 +23,6 @@ public class AdminAccountServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("admin account servlet");
         AccountDAO accountDAO = new AccountDAO();       
         //get session
         HttpSession session = request.getSession();

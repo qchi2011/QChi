@@ -18,7 +18,7 @@
                 <p>Do you want to delete this product?</p>
             </div>
             <div class="modal-footer">
-                <form action="deleteProduct" method="POST">
+                <form action="http://localhost:8080/GoodsKpopStore/admin/deleteProduct" method="POST">
                     <div class="form-group" style="display: none">
                         <input type="text" class="form-control" id="idDeleteInput" name="id">
                     </div>

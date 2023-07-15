@@ -31,7 +31,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form id="addProductForm" action="addProduct" method="POST" enctype="multipart/form-data">
+                        <form id="addProductForm" action="http://localhost:8080/GoodsKpopStore/admin/addProduct" method="POST" enctype="multipart/form-data">
                             <!--Name-->
                             <div class="form-group">
                                 <label for="name">Name:</label>

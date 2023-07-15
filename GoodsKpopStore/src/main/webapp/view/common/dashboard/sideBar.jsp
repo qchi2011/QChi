@@ -15,7 +15,7 @@
     <body>
         <ul class="sidebar navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="${pageContext.request.contextPath}/dashboard">
+                <a class="nav-link" href="${pageContext.request.contextPath}/admin/dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>

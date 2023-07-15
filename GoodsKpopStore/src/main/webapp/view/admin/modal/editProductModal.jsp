@@ -15,7 +15,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form id="editProductForm" action="editProduct" method="POST" enctype="multipart/form-data">
+                        <form id="editProductForm" action="http://localhost:8080/GoodsKpopStore/admin/editProduct" method="POST" enctype="multipart/form-data">
                             <!--id-->
                             <div class="form-group" style="display: none">
                                 <input type="text" class="form-control" id="idEditInput" name="id" />
