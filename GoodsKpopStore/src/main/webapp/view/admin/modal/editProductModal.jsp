@@ -67,7 +67,7 @@
                                 </div>
                                 <img id="previewImage2" src="#" alt="Preview"
                                     style="display: none; max-width: 300px; max-height: 300px;">
-
+                                <input type="hidden" id="currentImage" name="currentImage" value="">
                             </div>
                             <!--Description-->
                             <div class="form-group">
@@ -145,6 +145,7 @@
                 $('#descriptionEditInput').val(description);
                 $('#previewImage2').attr('src',image);
                 $('#previewImage2').css('display','block');
+                $('#currentImage').val(image);
             }
 
         </script>

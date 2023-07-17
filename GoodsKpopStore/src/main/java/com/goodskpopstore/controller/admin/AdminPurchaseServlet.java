@@ -10,6 +10,7 @@ import com.goodskpopstore.dal.impl.ProductDAO;
 import com.goodskpopstore.entity.Order;
 import com.goodskpopstore.entity.Product;
 import java.io.IOException;
+import static java.util.Collections.reverse;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -36,6 +37,9 @@ public class AdminPurchaseServlet extends HttpServlet {
         //get list orderDetails
 //        List<OrderDetails> listOrderDetails = orderDetailsDAO.findAll();
         List<Product> listProduct = productDAO.findProductByStatus();
+        
+        reverse(listOrder);
+        
         //set attribute to session
         session.setAttribute("listOrder", listOrder);
         session.setAttribute("ProductDAO", productDAO);

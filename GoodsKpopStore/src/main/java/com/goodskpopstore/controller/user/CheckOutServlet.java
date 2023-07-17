@@ -47,6 +47,7 @@ public class CheckOutServlet extends HttpServlet {
         Account account = (Account) session.getAttribute("account");
         //get cart on session
         HashMap<Integer, ItemCart> cart = (HashMap<Integer, ItemCart>) session.getAttribute("cart");
+        
         //calculate total amount of cart
         float amount = calculateTotalAmount(cart);
 
